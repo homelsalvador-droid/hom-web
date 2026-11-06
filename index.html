@@ -212,11 +212,14 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
 .about-stats div{padding:24px 0}
 .about-stats b{font-size:40px;display:block;color:var(--orange)}
 .about-stats span{font-size:14px;opacity:.65}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 32px}
 .pillars h3{font-size:18px;margin-bottom:8px}
 .pillars p{font-size:15px;line-height:1.5;opacity:.7}
 @media (max-width:1100px){.about-grid{grid-template-columns:1fr;gap:40px}.about-photo{min-height:360px}}
 @media (max-width:760px){.about h2{font-size:34px}.about-stats b{font-size:28px}.pillars{grid-template-columns:1fr}.about-photo{min-height:240px}}
+.social{display:flex;gap:18px}.social a{opacity:.8}.social a:hover{opacity:1;color:var(--orange)}
+.about-social{margin-top:36px;font-size:15px;opacity:.75}.about-social a{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:760px){.pillars{grid-template-columns:1fr}}
 </style></head><body>
 
 <nav>
@@ -364,17 +367,19 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
     <div>
       <div class="eyebrow">Sobre nosotros</div>
       <h2>Somos anfitriones antes que administradores<span class="dot">.</span></h2>
-      <p class="about-lead">Llevamos 4 años recibiendo huéspedes en El Salvador. Empezamos con nuestras propias propiedades, aprendimos qué hace que un huésped deje cinco estrellas, y hoy aplicamos ese mismo estándar a cada propiedad que gestionamos.</p>
+      <p class="about-lead">Llevamos 4 años recibiendo huéspedes en El Salvador. Empezamos con nuestras propias propiedades, aprendimos qué hace que un huésped deje cinco estrellas y qué números hacen rentable una propiedad, y hoy aplicamos ese mismo estándar a cada propiedad que gestionamos.</p>
       <div class="about-stats">
         <div><b>4</b><span>años como anfitriones</span></div>
         <div><b>+1,000</b><span>huéspedes recibidos</span></div>
         <div><b>4.92 ★</b><span>en 479 reseñas</span></div>
       </div>
       <div class="pillars">
+        <div><h3>Expertos en números</h3><p>Decidimos con datos: precios, ocupación y rentabilidad medidos cada mes, para que tu propiedad rinda lo máximo.</p></div>
         <div><h3>Equipo entrenado</h3><p>Limpieza, check-in y mantenimiento con personal formado para renta vacacional, no improvisado.</p></div>
         <div><h3>Ojo al detalle</h3><p>Revisamos cada propiedad después de cada estancia: amenidades, blancos, decoración y funcionamiento.</p></div>
         <div><h3>Trato cercano</h3><p>Hablas directo con nosotros por WhatsApp. Sin call centers ni respuestas automáticas.</p></div>
       </div>
+      <div class="about-social">Síguenos: <a href="https://www.instagram.com/hom.latam" target="_blank" rel="noopener">Instagram @hom.latam</a> · <a href="https://www.facebook.com/hom.latam" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@homlatam" target="_blank" rel="noopener">TikTok @homlatam</a></div>
     </div>
   </div>
 </section>
@@ -439,7 +444,7 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
   <div class="scar">Aceptamos solo 3 propiedades nuevas al mes para cuidar la calidad.</div>
 </div>
 
-<footer><img src="img/logo-claro.png" alt="hōm"><span class="o">San Salvador · La Libertad · El Salvador</span><span class="o"><a class="wa" data-msg="Hola">WhatsApp</a> · © <span id="yr"></span> hōm</span></footer>
+<footer><img src="img/logo-claro.png" alt="hōm"><span class="o">San Salvador · La Libertad · El Salvador</span><span class="social"><a href="https://www.instagram.com/hom.latam" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/hom.latam" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a href="https://www.tiktok.com/@homlatam" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 3c.3 2.2 1.7 3.8 4 4v3.2c-1.5 0-2.9-.5-4-1.2V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.3A2.8 2.8 0 1 0 13 15V3h3z"/></svg></a></span><span class="o"><a class="wa" data-msg="Hola">WhatsApp</a> · © <span id="yr"></span> hōm</span></footer>
 
 <a class="wa-float wa" data-msg="Hola, quiero información sobre la gestión de mi propiedad.">WhatsApp</a>
 
