@@ -230,10 +230,13 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
 .map-list li{padding:18px 24px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;flex-direction:column;gap:4px}
 .map-list li:hover,.map-list li.on{background:#fbf3ee}
 .map-list li b{font-size:17px}
-.map-list li b:before{content:"";display:inline-block;width:10px;height:10px;background:var(--orange);margin-right:10px}
+.map-list li b:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--orange);margin-right:10px}
 .map-list li span{font-size:14px;color:var(--muted);padding-left:20px}
 .map-note{font-size:13px;color:var(--muted);margin-top:10px}
-.hpin{background:var(--orange);width:16px;height:16px;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.hpin{background:var(--orange);width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.zlabel span{display:inline-block;transform:translate(-50%,-48px);background:var(--ink);color:var(--cream);font-weight:700;font-size:13px;padding:6px 10px;border-radius:20px;white-space:nowrap}
+.leaflet-popup-content{font-family:Arial,sans-serif}
+#map{filter:saturate(.9)}
 @media (max-width:760px){.map-wrap{grid-template-columns:1fr}#map{height:340px}.map-list{border-left:0;border-top:1.5px solid var(--ink)}}
 .r2r{background:#efe8dc}
 .r2r-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
@@ -246,12 +249,26 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
 .r2r-note{margin-top:36px;font-size:15px;color:var(--muted);border-left:3px solid var(--ink);padding-left:16px}
 @media (max-width:1100px){.r2r-grid{grid-template-columns:1fr;gap:40px}}
 @media (max-width:760px){.r2r h2{font-size:32px}.r2r-cards{grid-template-columns:1fr}.r2r .btn{display:block;text-align:center}}
+.realtor{padding-top:0}
+.realtor-box{background:var(--orange);color:#fff;padding:64px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.realtor h2{font-size:44px;line-height:1.05;margin:14px 0 20px}
+.realtor .eyebrow{color:#fff;opacity:.85}
+.realtor .dot{color:var(--ink)}
+.realtor p{font-size:18px;line-height:1.55;opacity:.95;margin-bottom:30px}
+.realtor .btn{background:var(--ink)}
+.realtor-steps{list-style:none;counter-reset:r}
+.realtor-steps li{counter-increment:r;padding:20px 0 20px 64px;border-bottom:1px solid rgba(255,255,255,.35);position:relative}
+.realtor-steps li:before{content:counter(r);position:absolute;left:0;top:18px;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--orange);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center}
+.realtor-steps b{display:block;font-size:19px;margin-bottom:4px}
+.realtor-steps span{font-size:15px;opacity:.9;line-height:1.5}
+@media (max-width:1100px){.realtor-box{grid-template-columns:1fr;padding:44px 32px}}
+@media (max-width:760px){.realtor-box{padding:36px 20px}.realtor h2{font-size:30px}.realtor .btn{display:block;text-align:center}}
 </style>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
 
 <nav>
   <a href="#"><img src="img/logo-claro.png" alt="hōm property management"></a>
-  <div class="links"><a href="#como">Cómo funciona</a><a href="#propiedades">Propiedades</a><a href="#mapa">Ubicaciones</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="#planes">Planes</a><a href="#renta-fija">Renta fija</a><a href="#preguntas">Preguntas</a></div>
+  <div class="links"><a href="#como">Cómo funciona</a><a href="#propiedades">Propiedades</a><a href="#mapa">Ubicaciones</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="#planes">Planes</a><a href="#renta-fija">Renta fija</a><a href="#realtors">Realtors</a><a href="#preguntas">Preguntas</a></div>
   <a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Análisis gratis</a>
 </nav>
 
@@ -491,6 +508,22 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
   <p class="r2r-note">Esta modalidad depende del potencial de cada propiedad: zona, vista, tamaño y amenidades del edificio. Lo evaluamos en el análisis gratis.</p>
 </section>
 
+<section class="realtor" id="realtors">
+  <div class="realtor-box">
+    <div>
+      <div class="eyebrow">Programa de referidos</div>
+      <h2>¿Eres realtor? Conéctanos una propiedad y gana una comisión<span class="dot">.</span></h2>
+      <p>Si tienes clientes que compran para invertir o propietarios que no saben qué hacer con su propiedad, preséntanos. Cuando firmen con hōm, tú ganas.</p>
+      <a class="btn wa" data-msg="Hola, soy realtor y quiero referir una propiedad a hōm.">Quiero referir una propiedad →</a>
+    </div>
+    <ol class="realtor-steps">
+      <li><b>Nos presentas</b><span>Envíanos el contacto del propietario o los datos de la propiedad por WhatsApp.</span></li>
+      <li><b>Nosotros evaluamos</b><span>Hacemos el análisis gratis y le presentamos la propuesta al propietario.</span></li>
+      <li><b>Tú cobras</b><span>Cuando el propietario firma, recibes tu comisión por referido.</span></li>
+    </ol>
+  </div>
+</section>
+
 <section style="padding-top:0" id="preguntas">
   <div class="faq">
     <div class="head"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que nos preguntan los propietarios<span class="dot">.</span></h2></div>
@@ -566,9 +599,11 @@ const SITIOS=[
 ];
 try{
   const map=L.map("map",{scrollWheelZoom:false});
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"&copy; OpenStreetMap"}).addTo(map);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{maxZoom:18,subdomains:"abcd",attribution:"&copy; OpenStreetMap &copy; CARTO"}).addTo(map);
   const icon=L.divIcon({className:"",html:'<div class="hpin"></div>',iconSize:[16,16],iconAnchor:[8,8]});
   const marks=SITIOS.map(([n,z,la,ln])=>L.marker([la,ln],{icon}).addTo(map).bindPopup("<b>"+n+"</b><br>"+z));
+  // Etiquetas por zona
+  [["San Salvador",13.6990,-89.2440],["Acajutla",13.5300,-89.8030]].forEach(([t,la,ln])=>L.marker([la,ln],{icon:L.divIcon({className:"zlabel",html:"<span>"+t+"</span>",iconSize:null})}).addTo(map));
   map.fitBounds(L.latLngBounds(SITIOS.map(x=>[x[2],x[3]])),{padding:[40,40]});
   document.querySelectorAll(".map-list li").forEach(li=>li.addEventListener("click",()=>{
     const i=+li.dataset.i;document.querySelectorAll(".map-list li").forEach(x=>x.classList.toggle("on",x===li));
