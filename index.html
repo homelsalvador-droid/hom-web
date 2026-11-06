@@ -288,6 +288,8 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
 .final .or{margin:28px 0 14px;font-size:15px;opacity:.9}
 @media (max-width:1100px){.final-grid{grid-template-columns:1fr;gap:40px}}
 @media (max-width:760px){.frm{grid-template-columns:1fr}.final .frm{padding:22px}dialog.ref .in{padding:28px 20px}.final-grid h2{font-size:36px}}
+.plan .pnote{font-size:13px;color:var(--muted);margin-top:16px;line-height:1.4}
+.plan.best .pnote{color:inherit;opacity:.75}
 </style>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
 
@@ -465,7 +467,7 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
       </div>
       <div class="pillars">
         <div><h3>Expertos en números</h3><p>Decidimos con datos: precios, ocupación y rentabilidad medidos cada mes, para que tu propiedad rinda lo máximo.</p></div>
-        <div><h3>Equipo entrenado</h3><p>Limpieza, check-in y mantenimiento con personal formado para renta vacacional, no improvisado.</p></div>
+        <div><h3>Equipo entrenado</h3><p>Limpieza, mantenimiento y atención al huésped con personal formado para renta vacacional, no improvisado.</p></div>
         <div><h3>Ojo al detalle</h3><p>Revisamos cada propiedad después de cada estancia: amenidades, blancos, decoración y funcionamiento.</p></div>
         <div><h3>Trato cercano</h3><p>Hablas directo con nosotros por WhatsApp. Sin call centers ni respuestas automáticas.</p></div>
       </div>
@@ -484,11 +486,11 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
   <div style="text-align:center"><div class="toggle"><button class="on" data-z="ciudad" type="button">Ciudad</button><button data-z="playa" type="button">Playa</button></div></div>
   <div class="plans">
     <div class="plan basic">
-      <h3>Básico</h3><div class="desc">Para quien ya tiene equipo en la propiedad.</div>
+      <h3>Básico</h3><div class="desc">Lo esencial para que tu propiedad rente bien.</div>
       <div class="price"><span class="pct" data-c="13" data-p="15">13</span><sup>%</sup></div><div class="per">de cada reserva</div>
       <ul>
-        <li>Anuncio optimizado</li><li>Precios dinámicos</li><li>Mensajes con huéspedes 24/7</li>
-        <li class="no">Check-in y limpieza</li><li class="no">Mantenimiento</li><li class="no">Fotos profesionales</li><li class="no">Reporte mensual</li>
+        <li>Anuncio optimizado</li><li>Precios dinámicos</li><li>Mensajes con huéspedes 24/7</li><li>Coordinación de limpiezas</li><li>Reporte mensual</li><li>30% de descuento en sesión de fotos</li>
+        <li class="no">Coordinación de mantenimiento</li><li class="no">Entrega de suministros</li><li class="no">Asesoría de interiores y operativa</li>
       </ul>
       <a class="btn wa" data-msg="Hola, me interesa el plan Básico.">Elegir Básico</a>
     </div>
@@ -497,18 +499,20 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
       <h3>Completo</h3><div class="desc">Nos encargamos de todo. Tú solo recibes.</div>
       <div class="price"><span class="pct" data-c="16" data-p="20">16</span><sup>%</sup></div><div class="per">de cada reserva</div>
       <ul>
-        <li>Todo lo del plan Básico</li><li>Check-in y coordinación de limpieza</li><li>Mantenimiento y reposición de amenidades</li>
-        <li>Sesión de fotos profesional gratis</li><li>Reporte mensual de ingresos</li><li>60 días con comisión reducida</li>
+        <li>Todo lo del plan Básico</li><li>Coordinación de mantenimiento</li><li>Entrega de suministros y amenidades</li><li>Asesoría de interiores y operativa</li>
+        <li>Sesión de fotos profesional gratis</li><li>60 días con comisión reducida</li>
       </ul>
+      <p class="pnote">Coordinamos mantenimientos y amenidades; su costo lo cubre el propietario.</p>
       <a class="btn wa" data-msg="Hola, me interesa el plan Completo.">Quiero el plan Completo</a>
     </div>
     <div class="plan prem">
-      <h3>Premium</h3><div class="desc">Para propiedades de lujo y portafolios.</div>
-      <div class="price"><span class="pct" data-c="20" data-p="25">20</span><sup>%</sup></div><div class="per">de cada reserva</div>
+      <h3>Premium</h3><div class="desc">Todo incluido: tú no pagas gastos de operación.</div>
+      <div class="price"><span class="pct" data-c="25" data-p="25">25</span><sup>%</sup></div><div class="per">de cada reserva</div>
       <ul>
-        <li>Todo lo del plan Completo</li><li>Asesoría de diseño y equipamiento</li><li>Revisión trimestral de rentabilidad</li>
+        <li>Todo lo del plan Completo</li><li>Pagamos el equipo de limpieza</li><li>Pagamos insumos y amenidades</li><li>Pagamos los mantenimientos</li>
         <li>Atención prioritaria al propietario</li><li>Gestor dedicado</li>
       </ul>
+      <p class="pnote">Los gastos incluidos tienen un monto máximo mensual, definido según la propiedad.</p>
       <a class="btn wa" data-msg="Hola, me interesa el plan Premium.">Elegir Premium</a>
     </div>
   </div>
