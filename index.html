@@ -512,14 +512,14 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
   <div class="realtor-box">
     <div>
       <div class="eyebrow">Programa de referidos</div>
-      <h2>¿Eres realtor? Conéctanos una propiedad y gana una comisión<span class="dot">.</span></h2>
-      <p>Si tienes clientes que compran para invertir o propietarios que no saben qué hacer con su propiedad, preséntanos. Cuando firmen con hōm, tú ganas.</p>
+      <h2>¿Eres realtor? Conéctanos una propiedad y gana $500<span class="dot">.</span></h2>
+      <p>Si tienes clientes que compran para invertir o propietarios que no saben qué hacer con su propiedad, preséntanos. Por cada propiedad que firme con hōm, te pagamos <b>$500</b>.</p>
       <a class="btn wa" data-msg="Hola, soy realtor y quiero referir una propiedad a hōm.">Quiero referir una propiedad →</a>
     </div>
     <ol class="realtor-steps">
       <li><b>Nos presentas</b><span>Envíanos el contacto del propietario o los datos de la propiedad por WhatsApp.</span></li>
       <li><b>Nosotros evaluamos</b><span>Hacemos el análisis gratis y le presentamos la propuesta al propietario.</span></li>
-      <li><b>Tú cobras</b><span>Cuando el propietario firma, recibes tu comisión por referido.</span></li>
+      <li><b>Tú cobras</b><span>Cuando el propietario firma, recibes $500 por propiedad.</span></li>
     </ol>
   </div>
 </section>
@@ -599,7 +599,8 @@ const SITIOS=[
 ];
 try{
   const map=L.map("map",{scrollWheelZoom:false});
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{maxZoom:18,subdomains:"abcd",attribution:"&copy; OpenStreetMap &copy; CARTO"}).addTo(map);
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:16,attribution:"Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap"}).addTo(map);
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:16}).addTo(map);
   const icon=L.divIcon({className:"",html:'<div class="hpin"></div>',iconSize:[16,16],iconAnchor:[8,8]});
   const marks=SITIOS.map(([n,z,la,ln])=>L.marker([la,ln],{icon}).addTo(map).bindPopup("<b>"+n+"</b><br>"+z));
   // Etiquetas por zona
