@@ -264,6 +264,30 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
 @media (max-width:1100px){.realtor-box{grid-template-columns:1fr;padding:44px 32px}}
 @media (max-width:760px){.realtor-box{padding:36px 20px}.realtor h2{font-size:30px}.realtor .btn{display:block;text-align:center}}
 @media (max-width:1100px) and (min-width:761px){nav .links{gap:22px;font-size:14px}}
+
+/* formularios */
+.frm{display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
+.frm label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;letter-spacing:.02em}
+.frm label.full{grid-column:1/-1}
+.frm input,.frm select,.frm textarea{font:inherit;font-size:16px;font-weight:400;padding:13px 14px;border:1.5px solid var(--ink);border-radius:2px;background:#fff;color:var(--ink);width:100%}
+.frm textarea{min-height:90px;resize:vertical}
+.frm .hp{display:none}
+.frm button{grid-column:1/-1;border:0;cursor:pointer;font-family:inherit}
+.frm .msg{grid-column:1/-1;font-size:15px;min-height:1em}
+.frm small{font-weight:400;color:var(--muted)}
+dialog.ref{border:0;padding:0;margin:auto;max-height:calc(100% - 32px);max-width:640px;width:calc(100% - 32px);background:var(--cream);color:var(--ink);border-radius:4px}
+dialog.ref::backdrop{background:rgba(24,20,19,.6)}
+dialog.ref .in{padding:40px}
+dialog.ref h3{font-size:28px;margin-bottom:8px;letter-spacing:-.02em}
+dialog.ref p.sub{color:var(--muted);margin-bottom:24px}
+dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;font-size:30px;cursor:pointer;color:var(--ink)}
+.final-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;max-width:1180px;margin:0 auto;text-align:left;align-items:start}
+.final-grid h2{margin:0 0 22px;font-size:52px}
+.final .frm{background:var(--cream);color:var(--ink);padding:32px;border-radius:4px}
+.final .frm .btn{background:var(--orange)}
+.final .or{margin:28px 0 14px;font-size:15px;opacity:.9}
+@media (max-width:1100px){.final-grid{grid-template-columns:1fr;gap:40px}}
+@media (max-width:760px){.frm{grid-template-columns:1fr}.final .frm{padding:22px}dialog.ref .in{padding:28px 20px}.final-grid h2{font-size:36px}}
 </style>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
 
@@ -515,15 +539,38 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
       <div class="eyebrow">Programa de referidos</div>
       <h2>¿Eres realtor? Conéctanos una propiedad y gana $500<span class="dot">.</span></h2>
       <p>Si tienes clientes que compran para invertir o propietarios que no saben qué hacer con su propiedad, preséntanos. Por cada propiedad que firme con hōm, te pagamos <b>$500</b>.</p>
-      <a class="btn wa" data-msg="Hola, soy realtor y quiero referir una propiedad a hōm.">Quiero referir una propiedad →</a>
+      <button type="button" class="btn" id="open-ref" style="border:0;cursor:pointer;font-family:inherit">Quiero referir una propiedad →</button>
     </div>
     <ol class="realtor-steps">
-      <li><b>Nos presentas</b><span>Envíanos el contacto del propietario o los datos de la propiedad por WhatsApp.</span></li>
+      <li><b>Nos presentas</b><span>Llenas el formulario con tus datos y los de la propiedad.</span></li>
       <li><b>Nosotros evaluamos</b><span>Hacemos el análisis gratis y le presentamos la propuesta al propietario.</span></li>
       <li><b>Tú cobras</b><span>Cuando el propietario firma, recibes $500 por propiedad.</span></li>
     </ol>
   </div>
 </section>
+
+
+<dialog class="ref" id="ref-dialog">
+  <div class="in" style="position:relative">
+    <button class="x" type="button" aria-label="Cerrar" onclick="this.closest('dialog').close()">×</button>
+    <h3>Referir una propiedad</h3>
+    <p class="sub">Te contactamos pronto. Si el propietario firma con hōm, ganas $500.</p>
+    <form class="frm" data-form="Referido de realtor">
+      <label>Tu nombre<input name="Nombre del realtor" required autocomplete="name"></label>
+      <label>Tu teléfono / WhatsApp<input name="Teléfono del realtor" type="tel" required autocomplete="tel" placeholder="+503 ..."></label>
+      <label class="full"><span>Tu correo <small>(opcional)</small></span><input name="Correo del realtor" type="email" autocomplete="email"></label>
+      <label class="full">Ubicación de la propiedad<input name="Ubicación de la propiedad" required placeholder="Colonia, ciudad o playa"></label>
+      <label>Cantidad de cuartos<select name="Cuartos" required><option value="">Elige</option><option>Estudio</option><option>1</option><option>2</option><option>3</option><option>4 o más</option></select></label>
+      <label>Tipo<select name="Tipo de propiedad"><option>Apartamento</option><option>Casa</option><option>Casa de playa</option><option>Otro</option></select></label>
+      <label><span>Nombre del propietario <small>(opcional)</small></span><input name="Nombre del propietario"></label>
+      <label>¿El propietario ya sabe de hōm?<select name="Propietario informado"><option>Sí, ya le hablé de hōm</option><option>Todavía no</option></select></label>
+      <label class="full"><span>Comentarios <small>(opcional)</small></span><textarea name="Comentarios" placeholder="Estado de la propiedad, si está amueblada, si hoy se renta, etc."></textarea></label>
+      <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <button class="btn" type="submit">Enviar referido →</button>
+      <div class="msg" role="status"></div>
+    </form>
+  </div>
+</dialog>
 
 <section style="padding-top:0" id="preguntas">
   <div class="faq">
@@ -539,11 +586,30 @@ a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
   </div>
 </section>
 
-<div class="final">
-  <h2>Descubre cuánto puede facturar tu propiedad</h2>
-  <p>Análisis gratis por WhatsApp. Sin compromiso y sin permanencia.</p>
-  <a class="btn wa" data-msg="Hola, quiero saber cuánto puede facturar mi propiedad.">Escribir por WhatsApp →</a>
-  <div class="scar">Aceptamos solo 3 propiedades nuevas al mes para cuidar la calidad.</div>
+<div class="final" id="contacto">
+  <div class="final-grid">
+    <div>
+      <h2>Descubre cuánto puede facturar tu propiedad</h2>
+      <p>Análisis gratis y sin compromiso. Déjanos tus datos y te contactamos, o escríbenos directo.</p>
+      <div class="or">¿Prefieres WhatsApp?</div>
+      <a class="btn wa" data-msg="Hola, quiero saber cuánto puede facturar mi propiedad.">Escribir por WhatsApp →</a>
+      <div class="scar">Aceptamos solo 3 propiedades nuevas al mes para cuidar la calidad.</div>
+    </div>
+    <form class="frm" data-form="Propietario interesado">
+      <label>Nombre<input name="Nombre" required autocomplete="name"></label>
+      <label>Teléfono / WhatsApp<input name="Teléfono" type="tel" required autocomplete="tel" placeholder="+503 ..."></label>
+      <label class="full">Correo<input name="Correo" type="email" required autocomplete="email"></label>
+      <label class="full">Ubicación de la propiedad<input name="Ubicación de la propiedad" required placeholder="Colonia, ciudad o playa"></label>
+      <label>Cantidad de cuartos<select name="Cuartos" required><option value="">Elige</option><option>Estudio</option><option>1</option><option>2</option><option>3</option><option>4 o más</option></select></label>
+      <label>Hoy la propiedad está<select name="Situación actual"><option>Vacía</option><option>En renta tradicional</option><option>Ya en Airbnb</option><option>En construcción / por entregar</option></select></label>
+      <label class="full">Me interesa<select name="Servicio de interés"><option>Administración en Airbnb (comisión)</option><option>Renta fija (ustedes me rentan la propiedad)</option><option>No sé, quiero que me asesoren</option></select></label>
+      <label class="full"><span>Mensaje <small>(opcional)</small></span><textarea name="Mensaje"></textarea></label>
+      <input class="hp" name="_honey" tabindex="-1" autocomplete="off">
+      <button class="btn" type="submit">Quiero mi análisis gratis →</button>
+      <div class="msg" role="status"></div>
+    </form>
+  </div>
+</div>
 </div>
 
 <footer><img src="img/logo-claro.png" alt="hōm"><span class="o">San Salvador · La Libertad · El Salvador</span><span class="social"><a href="https://www.instagram.com/hom.latam" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/hom.sv" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a href="https://www.tiktok.com/@homlatam" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 3c.3 2.2 1.7 3.8 4 4v3.2c-1.5 0-2.9-.5-4-1.2V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.3A2.8 2.8 0 1 0 13 15V3h3z"/></svg></a></span><span class="o"><a class="wa" data-msg="Hola">WhatsApp</a> · © <span id="yr"></span> hōm</span></footer>
@@ -564,6 +630,31 @@ const fmt=n=>"$"+Math.round(n).toLocaleString("en-US");
 document.querySelectorAll(".wa").forEach(a=>{
   a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.msg||"Hola");
   a.target="_blank";a.rel="noopener";
+});
+
+/* Formularios: las respuestas llegan a este correo (vía FormSubmit) */
+const CORREO_FORMULARIOS = "homelsalvador@gmail.com";
+const refDlg=document.getElementById("ref-dialog");
+document.getElementById("open-ref").addEventListener("click",()=>refDlg.showModal());
+refDlg.addEventListener("click",e=>{if(e.target===refDlg)refDlg.close()});
+document.querySelectorAll("form[data-form]").forEach(f=>{
+  f.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const btn=f.querySelector("button[type=submit]"),msg=f.querySelector(".msg"),txt=btn.textContent;
+    const data=Object.fromEntries(new FormData(f));
+    if(data._honey)return;
+    data._subject="hōm web: "+f.dataset.form;data._template="table";data._captcha="false";
+    btn.disabled=true;btn.textContent="Enviando...";msg.textContent="";
+    try{
+      const r=await fetch("https://formsubmit.co/ajax/"+CORREO_FORMULARIOS,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});
+      const j=await r.json().catch(()=>({}));
+      if(!r.ok||j.success==="false"||j.success===false)throw 0;
+      f.reset();msg.textContent="¡Listo! Recibimos tus datos y te contactamos pronto.";
+    }catch(_){
+      msg.innerHTML='No se pudo enviar. Escríbenos por <a href="https://wa.me/'+WHATSAPP+'" target="_blank" rel="noopener" style="text-decoration:underline">WhatsApp</a>.';
+    }
+    btn.disabled=false;btn.textContent=txt;
+  });
 });
 function calcular(){
   const z=document.getElementById("zona").value,t=document.getElementById("tipo").value;
