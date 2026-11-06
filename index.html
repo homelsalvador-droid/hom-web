@@ -199,11 +199,15 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
   .final h2{font-size:36px}
   footer{flex-direction:column;gap:14px;text-align:center}
 }
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:240px;gap:12px}
+.gal .g{background-size:cover;background-position:center}
+.gal .g.big{grid-column:span 2;grid-row:span 2}
+@media (max-width:760px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:8px}}
 </style></head><body>
 
 <nav>
   <a href="#"><img src="img/logo-claro.png" alt="hōm property management"></a>
-  <div class="links"><a href="#como">Cómo funciona</a><a href="#resultados">Resultados</a><a href="#planes">Planes</a><a href="#preguntas">Preguntas</a></div>
+  <div class="links"><a href="#como">Cómo funciona</a><a href="#propiedades">Propiedades</a><a href="#resultados">Resultados</a><a href="#planes">Planes</a><a href="#preguntas">Preguntas</a></div>
   <a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Análisis gratis</a>
 </nav>
 
@@ -215,7 +219,7 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
     <div class="ctas"><a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Quiero mi análisis gratis →</a><a class="btn ghost" href="#resultados">Ver resultados</a></div>
     <div class="fine">Respuesta por WhatsApp en menos de 24 horas · Sin permanencia</div>
   </div>
-  <div class="photo rel">Foto: propiedad gestionada por hōm
+  <div class="photo img rel" style="background-image:url(img/hero.jpg)" role="img" aria-label="Sala con vista al volcán de San Salvador">
     <div class="badge"><b>4.92 ★</b><span>calificación promedio</span></div>
     <div class="badge b2"><b>479</b><span>reseñas de huéspedes</span></div>
   </div>
@@ -303,20 +307,38 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
   <div class="honest"><span><b>Somos honestos:</b> si tu propiedad rinde más en renta tradicional, te lo diremos en el análisis gratis.</span><a class="btn wa" data-msg="Hola, quiero comparar si me conviene más Airbnb o renta tradicional.">Comparar mi propiedad</a></div>
 </section>
 
+<section style="padding-top:0" id="propiedades">
+  <div class="head">
+    <div class="eyebrow">Nuestras propiedades</div>
+    <h2>Así se ven las propiedades que gestionamos<span class="dot">.</span></h2>
+  </div>
+  <div class="gal">
+    <div class="g big" style="background-image:url(img/g-volcan.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-avitat-one.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-arthaus.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-piscina.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-panorama-a209.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-pedregal.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-lomas.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-cocina.jpg)"></div>
+    <div class="g" style="background-image:url(img/g-balcon.jpg)"></div>
+  </div>
+</section>
+
 <section class="cases" id="resultados">
   <div class="head">
     <div class="eyebrow">Resultados reales</div>
     <h2>Antes y después de hōm<span class="dot">.</span></h2>
   </div>
   <div class="cgrid">
-    <div class="case"><div class="photo">Foto propiedad</div><div class="body">
+    <div class="case"><div class="photo img" style="background-image:url(img/caso-1.jpg)"></div><div class="body">
       <h4>Apartamento 2 hab.</h4><div class="loc">San Benito, San Salvador</div>
       <div class="ba"><div><small>Antes</small><b>$750/mes</b></div><div class="after"><small>Con hōm</small><b>$2,100/mes</b></div></div>
       <p class="quote">"Pasé de contestar mensajes a medianoche a solo revisar el reporte." — Propietario</p>
     </div></div>
-    <div class="case"><div class="photo">Foto propiedad</div><div class="body">
-      <h4>Casa de playa 4 hab.</h4><div class="loc">El Tunco, La Libertad</div>
-      <div class="ba"><div><small>Antes · al mes</small><b>4 noches</b></div><div class="after"><small>Con hōm · al mes</small><b>17 noches</b></div></div>
+    <div class="case"><div class="photo img" style="background-image:url(img/caso-2.jpg)"></div><div class="body">
+      <h4>Apartamento 3 hab. con piscina</h4><div class="loc">San Salvador</div>
+      <div class="ba"><div><small>Antes</small><b>$1,100/mes</b></div><div class="after"><small>Con hōm</small><b>$2,600/mes</b></div></div>
       <p class="quote">"Vivo en Houston y por fin la casa trabaja sola." — Propietaria</p>
     </div></div>
   </div>
