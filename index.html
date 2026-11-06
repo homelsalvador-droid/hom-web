@@ -221,11 +221,37 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
 .about-social{margin-top:36px;font-size:15px;opacity:.75}.about-social a{text-decoration:underline;text-underline-offset:3px}
 @media (max-width:760px){.pillars{grid-template-columns:1fr}}
 @media (max-width:1100px) and (min-width:761px){.steps{grid-template-columns:1fr 1fr}}
-</style></head><body>
+a.ab{text-decoration:underline;text-underline-offset:3px;color:inherit}
+.ab-btn{margin-top:36px;background:transparent;border:1.5px solid var(--cream);color:var(--cream)}
+.ab-btn:hover{background:var(--orange);border-color:var(--orange)}
+.map-wrap{display:grid;grid-template-columns:1.6fr 1fr;border:1.5px solid var(--ink);background:#fff}
+#map{height:480px;z-index:1}
+.map-list{list-style:none;border-left:1.5px solid var(--ink)}
+.map-list li{padding:18px 24px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.map-list li:hover,.map-list li.on{background:#fbf3ee}
+.map-list li b{font-size:17px}
+.map-list li b:before{content:"";display:inline-block;width:10px;height:10px;background:var(--orange);margin-right:10px}
+.map-list li span{font-size:14px;color:var(--muted);padding-left:20px}
+.map-note{font-size:13px;color:var(--muted);margin-top:10px}
+.hpin{background:var(--orange);width:16px;height:16px;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+@media (max-width:760px){.map-wrap{grid-template-columns:1fr}#map{height:340px}.map-list{border-left:0;border-top:1.5px solid var(--ink)}}
+.r2r{background:#efe8dc}
+.r2r-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.r2r h2{font-size:48px;line-height:1.05;margin:14px 0 22px}
+.r2r-lead{font-size:19px;line-height:1.55;color:#3a3330;margin-bottom:32px}
+.r2r-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.r2r-cards div{background:#fff;padding:26px;border-top:3px solid var(--orange)}
+.r2r-cards b{display:block;font-size:19px;margin-bottom:8px}
+.r2r-cards span{font-size:15px;line-height:1.5;color:var(--muted)}
+.r2r-note{margin-top:36px;font-size:15px;color:var(--muted);border-left:3px solid var(--ink);padding-left:16px}
+@media (max-width:1100px){.r2r-grid{grid-template-columns:1fr;gap:40px}}
+@media (max-width:760px){.r2r h2{font-size:32px}.r2r-cards{grid-template-columns:1fr}.r2r .btn{display:block;text-align:center}}
+</style>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
 
 <nav>
   <a href="#"><img src="img/logo-claro.png" alt="hōm property management"></a>
-  <div class="links"><a href="#como">Cómo funciona</a><a href="#propiedades">Propiedades</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="#planes">Planes</a><a href="#preguntas">Preguntas</a></div>
+  <div class="links"><a href="#como">Cómo funciona</a><a href="#propiedades">Propiedades</a><a href="#mapa">Ubicaciones</a><a href="#resultados">Resultados</a><a href="#nosotros">Nosotros</a><a href="#planes">Planes</a><a href="#renta-fija">Renta fija</a><a href="#preguntas">Preguntas</a></div>
   <a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Análisis gratis</a>
 </nav>
 
@@ -235,7 +261,7 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
     <h1>Tu propiedad puede facturar hasta 3× más<span class="dot">.</span></h1>
     <p class="lead">Gestionamos tu casa o apartamento en Airbnb de principio a fin: anuncio, precios, huéspedes, limpieza y mantenimiento. Airbnb te paga directo a tu cuenta y tú recibes un reporte claro cada mes.</p>
     <div class="ctas"><a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Quiero mi análisis gratis →</a><a class="btn ghost" href="#resultados">Ver resultados</a></div>
-    <div class="fine">Respuesta por WhatsApp en menos de 24 horas · Sin permanencia</div>
+    <div class="fine">Respuesta por WhatsApp en menos de 24 horas · Sin permanencia · <a class="ab" href="https://www.airbnb.com/p/leones" target="_blank" rel="noopener">Nuestro perfil en Airbnb</a></div>
   </div>
   <div class="photo img rel" style="background-image:url(img/hero.jpg)" role="img" aria-label="Sala con vista al volcán de San Salvador">
     <div class="badge"><b>4.92 ★</b><span>calificación promedio</span></div>
@@ -243,7 +269,7 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
   </div>
 </div>
 <div class="proof">
-  <div><b>479</b><span>reseñas verificadas en Airbnb</span></div>
+  <div><b>479</b><span>reseñas verificadas en Airbnb · <a class="ab" href="https://www.airbnb.com/p/leones" target="_blank" rel="noopener">ver perfil →</a></span></div>
   <div><b>4.92 ★</b><span>calificación promedio</span></div>
   <div><b>2–4×</b><span>lo que factura el promedio de San Salvador</span></div>
   <div><b>0</b><span>meses de permanencia obligatoria</span></div>
@@ -344,6 +370,26 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
   </div>
 </section>
 
+<section style="padding-top:0" id="mapa">
+  <div class="head">
+    <div class="eyebrow">Dónde estamos</div>
+    <h2>Ya operamos en los mejores edificios de San Salvador y la costa<span class="dot">.</span></h2>
+    <p>Si tu propiedad está en uno de estos edificios o cerca, ya tenemos equipo en la zona.</p>
+  </div>
+  <div class="map-wrap">
+    <div id="map" role="img" aria-label="Mapa de propiedades gestionadas por hōm"></div>
+    <ul class="map-list">
+      <li data-i="0"><b>Vistas de Masferrer</b><span>Colonia Escalón</span></li>
+      <li data-i="1"><b>Panorama Tower</b><span>Colonia Escalón</span></li>
+      <li data-i="2"><b>Condominio 105</b><span>Colonia Escalón</span></li>
+      <li data-i="3"><b>Lomas 500</b><span>Lomas de San Francisco</span></li>
+      <li data-i="4"><b>Avitat Joy</b><span>Antiguo Cuscatlán</span></li>
+      <li data-i="5"><b>Las Veraneras</b><span>Acajutla, Sonsonate</span></li>
+    </ul>
+  </div>
+  <p class="map-note">Ubicaciones aproximadas.</p>
+</section>
+
 <section class="cases" id="resultados">
   <div class="head">
     <div class="eyebrow">Resultados reales</div>
@@ -381,6 +427,7 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
         <div><h3>Ojo al detalle</h3><p>Revisamos cada propiedad después de cada estancia: amenidades, blancos, decoración y funcionamiento.</p></div>
         <div><h3>Trato cercano</h3><p>Hablas directo con nosotros por WhatsApp. Sin call centers ni respuestas automáticas.</p></div>
       </div>
+      <a class="btn ab-btn" href="https://www.airbnb.com/p/leones" target="_blank" rel="noopener">Ver nuestro perfil y reseñas en Airbnb →</a>
       <div class="about-social">Síguenos: <a href="https://www.instagram.com/hom.latam" target="_blank" rel="noopener">Instagram @hom.latam</a> · <a href="https://www.facebook.com/hom.sv" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@homlatam" target="_blank" rel="noopener">TikTok @homlatam</a></div>
     </div>
   </div>
@@ -426,6 +473,24 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
   <div class="guar"><span><b>Sin permanencia:</b> te vas con 30 días de aviso</span><span><b>Sin cuota fija:</b> si no hay reservas, no cobramos</span><span><b>Transparencia total:</b> Airbnb te paga directo, nunca tocamos tu dinero</span></div>
 </section>
 
+<section class="r2r" id="renta-fija">
+  <div class="r2r-grid">
+    <div>
+      <div class="eyebrow">Otra modalidad · Rent to rent</div>
+      <h2>¿Prefieres un ingreso fijo? Nosotros te rentamos tu propiedad<span class="dot">.</span></h2>
+      <p class="r2r-lead">Tú nos alquilas tu propiedad con un contrato a largo plazo. Nosotros la amueblamos, la equipamos y la ponemos a trabajar en renta vacacional. Tú recibes una renta fija cada mes, haya o no reservas.</p>
+      <a class="btn wa" data-msg="Hola, me interesa la modalidad rent to rent para mi propiedad.">Evaluar mi propiedad para rent to rent →</a>
+    </div>
+    <div class="r2r-cards">
+      <div><b>Ingreso fijo</b><span>Una renta mensual garantizada por contrato, sin depender de la temporada.</span></div>
+      <div><b>Nosotros amueblamos</b><span>Invertimos en muebles, equipamiento y decoración para que la propiedad esté lista para huéspedes.</span></div>
+      <div><b>Contratos largos</b><span>Acuerdos de varios años, con estabilidad para ti y para nosotros.</span></div>
+      <div><b>Cero gestión</b><span>Nos encargamos de todo: huéspedes, limpieza, mantenimiento y gastos de operación.</span></div>
+    </div>
+  </div>
+  <p class="r2r-note">Esta modalidad depende del potencial de cada propiedad: zona, vista, tamaño y amenidades del edificio. Lo evaluamos en el análisis gratis.</p>
+</section>
+
 <section style="padding-top:0" id="preguntas">
   <div class="faq">
     <div class="head"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que nos preguntan los propietarios<span class="dot">.</span></h2></div>
@@ -456,7 +521,7 @@ details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);m
 const WHATSAPP = "50379281377"; // número con código de país, sin + ni espacios
 // Ingreso anual estimado con hōm por zona y tipo (US$). Ajusta con tus datos reales.
 const POTENCIAL = {
-  ciudad:{1:16000,2:22000,3:30000},
+  ciudad:{1:16000,2:26000,3:30000},
   playa:{1:15000,2:22000,3:32000},
   otra:{1:10000,2:14000,3:18000}
 };
@@ -486,5 +551,29 @@ document.querySelectorAll(".toggle button").forEach(b=>b.addEventListener("click
   document.querySelectorAll(".pct").forEach(p=>p.textContent=b.dataset.z==="playa"?p.dataset.p:p.dataset.c);
 }));
 document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script>
+// Ubicaciones aproximadas (lat, lng). Ajusta si hace falta.
+const SITIOS=[
+  ["Vistas de Masferrer","Colonia Escalón",13.7128,-89.2445],
+  ["Panorama Tower","Colonia Escalón",13.7062,-89.2398],
+  ["Condominio 105","Colonia Escalón",13.7018,-89.2472],
+  ["Lomas 500","Lomas de San Francisco",13.6872,-89.2560],
+  ["Avitat Joy","Antiguo Cuscatlán",13.6765,-89.2478],
+  ["Las Veraneras","Acajutla, Sonsonate",13.5300,-89.8030]
+];
+try{
+  const map=L.map("map",{scrollWheelZoom:false});
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"&copy; OpenStreetMap"}).addTo(map);
+  const icon=L.divIcon({className:"",html:'<div class="hpin"></div>',iconSize:[16,16],iconAnchor:[8,8]});
+  const marks=SITIOS.map(([n,z,la,ln])=>L.marker([la,ln],{icon}).addTo(map).bindPopup("<b>"+n+"</b><br>"+z));
+  map.fitBounds(L.latLngBounds(SITIOS.map(x=>[x[2],x[3]])),{padding:[40,40]});
+  document.querySelectorAll(".map-list li").forEach(li=>li.addEventListener("click",()=>{
+    const i=+li.dataset.i;document.querySelectorAll(".map-list li").forEach(x=>x.classList.toggle("on",x===li));
+    map.setView([SITIOS[i][2],SITIOS[i][3]],15);marks[i].openPopup();
+  }));
+}catch(e){document.getElementById("map").style.display="none";}
 </script>
 </body></html>
