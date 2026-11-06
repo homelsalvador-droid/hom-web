@@ -335,6 +335,12 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
 .proof.in div{opacity:1;transform:none}
 .proof.in div:nth-child(2){transition-delay:.12s}.proof.in div:nth-child(3){transition-delay:.24s}.proof.in div:nth-child(4){transition-delay:.36s}
 @media (prefers-reduced-motion:reduce){.hero *,.hero .kb::before,.hero .hl::after,.proof div{animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
+.testi{margin:48px 0 0;background:#fff;padding:36px;display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;border-left:4px solid var(--orange)}
+.testi img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.testi blockquote{font-size:20px;line-height:1.55;color:var(--ink)}
+.testi figcaption{margin-top:16px;font-size:15px;color:var(--muted)}
+.testi figcaption b{color:var(--ink)}
+@media (max-width:760px){.testi{grid-template-columns:1fr;padding:24px;gap:16px}.testi img{width:72px;height:72px}.testi blockquote{font-size:17px}}
 </style>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
 
@@ -580,6 +586,13 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
       <div><b>Cero gestión</b><span>Nos encargamos de todo: huéspedes, limpieza, mantenimiento y gastos de operación.</span></div>
     </div>
   </div>
+  <figure class="testi">
+    <img src="img/testimonio-hector.jpg" alt="Héctor Pleites, propietario en renta fija con hōm" width="96" height="96" loading="lazy">
+    <div>
+      <blockquote>“Hace más de dos años firmé con hōm un contrato de tres años por mi apartamento. Ellos se encargaron de amueblarlo y ponerlo a punto para trabajarlo, sin que yo tuviera que invertir ni coordinar nada. Desde entonces todos los pagos han llegado puntuales, y nunca me han pedido ayuda con nada. Para mí es un ingreso fijo, seguro y totalmente estable. Me olvido del apartamento y sé que está bien cuidado.”</blockquote>
+      <figcaption><b>Héctor Pleites</b> · Propietario en renta fija desde hace más de 2 años</figcaption>
+    </div>
+  </figure>
   <p class="r2r-note">Esta modalidad depende del potencial de cada propiedad: zona, vista, tamaño y amenidades del edificio. Lo evaluamos en el análisis gratis.</p>
 </section>
 
