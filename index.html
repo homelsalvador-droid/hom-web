@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hōm · Property management en El Salvador</title>
+<meta name="description" content="Gestionamos tu propiedad en Airbnb en San Salvador y la costa: anuncio, precios, huéspedes, limpieza y mantenimiento. Análisis gratis por WhatsApp.">
+<meta property="og:title" content="hōm · Tu propiedad puede facturar hasta 3× más">
+<meta property="og:description" content="Property management de renta vacacional en El Salvador. 479 reseñas · 4.92 ★">
+<link rel="icon" href="img/favicon.png">
+<style>
+:root{--ink:#181413;--cream:#f8f4ec;--orange:#ec5028;--muted:#6f6863;--line:#e4ddd0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:Arial,"Liberation Sans",sans-serif}
+.wrap{padding:0 96px}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);font-weight:700}
+h1,h2{font-weight:700;letter-spacing:-.02em}
+.btn{display:inline-block;background:var(--orange);color:#fff;font-weight:700;font-size:17px;padding:18px 30px;border-radius:2px}
+.btn.ghost{background:transparent;border:1.5px solid currentColor;color:inherit}
+.dot{color:var(--orange)}
+/* nav */
+nav{background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:26px 96px;border-bottom:1px solid #2c2624}
+nav img{height:38px}
+nav .links{display:flex;gap:40px;font-size:15px;opacity:.85}
+nav .btn{padding:12px 20px;font-size:14px}
+/* hero */
+.hero{background:var(--ink);color:var(--cream);padding:96px 96px 72px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px}
+.hero h1{font-size:72px;line-height:1.02;margin:22px 0 26px}
+.hero p.lead{font-size:21px;line-height:1.5;opacity:.8;max-width:560px}
+.hero .ctas{display:flex;gap:16px;margin:40px 0 18px}
+.hero .fine{font-size:14px;opacity:.6}
+.photo{background:linear-gradient(135deg,#3a322e,#241e1c);border:1px solid #3a322e;position:relative;display:flex;align-items:flex-end;padding:20px;color:#a99f97;font-size:13px}
+.hero .photo{height:520px}
+.badge{position:absolute;top:28px;left:-36px;background:var(--cream);color:var(--ink);padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.badge b{font-size:30px;display:block}
+.badge span{font-size:13px;color:var(--muted)}
+.badge.b2{top:auto;bottom:90px;left:auto;right:-24px;background:var(--orange);color:#fff}
+.badge.b2 span{color:#ffe3d9}
+/* proof bar */
+.proof{background:var(--ink);color:var(--cream);padding:56px 96px 72px;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #2c2624}
+.proof div{border-left:1px solid #3a322e;padding-left:28px}
+.proof b{font-size:44px;display:block}
+.proof span{font-size:15px;opacity:.65}
+section{padding:110px 96px}
+.head{max-width:760px;margin-bottom:56px}
+.head h2{font-size:52px;line-height:1.05;margin-top:14px}
+.head p{font-size:19px;color:var(--muted);margin-top:18px;line-height:1.5}
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--ink)}
+.calc .in{padding:48px;background:#fff}
+.field{margin-bottom:26px}
+.field label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
+.field .box{border:1.5px solid var(--line);padding:16px 18px;font-size:18px;display:flex;justify-content:space-between}
+.calc .out{background:var(--ink);color:var(--cream);padding:48px;display:flex;flex-direction:column;justify-content:center}
+.calc .out .row{display:flex;justify-content:space-between;font-size:18px;padding:14px 0;border-bottom:1px solid #3a322e}
+.calc .out .big{font-size:76px;font-weight:700;color:var(--orange);margin:26px 0 6px}
+.calc .out small{opacity:.6;font-size:14px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.step{border-top:3px solid var(--ink);padding-top:26px}
+.step .n{font-size:15px;color:var(--orange);font-weight:700}
+.step h3{font-size:28px;margin:12px 0}
+.step p{color:var(--muted);font-size:17px;line-height:1.5}
+/* cases */
+.cases{background:#efe8dc}
+.cgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.case{background:#fff;display:grid;grid-template-columns:200px minmax(0,1fr)}
+.case .photo{height:auto;min-height:260px}
+.case .body{padding:32px}
+.case h4{font-size:22px;margin-bottom:6px}
+.case .loc{color:var(--muted);font-size:14px;margin-bottom:22px}
+.ba{display:flex;gap:16px;align-items:center}
+.ba div{flex:1;border:1px solid var(--line);padding:14px}
+.ba div.after{border-color:var(--orange)}
+.ba small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ba b{display:block;font-size:22px;white-space:nowrap;margin-top:4px}
+.ba .after b{color:var(--orange)}
+.quote{margin-top:20px;font-size:15px;line-height:1.5;color:#3a3330;font-style:italic}
+/* plans */
+.toggle{display:inline-flex;border:1.5px solid var(--ink);margin-bottom:44px}
+.toggle span{padding:12px 26px;font-size:15px;font-weight:700}
+.toggle span.on{background:var(--ink);color:var(--cream)}
+.plans{display:grid;grid-template-columns:1fr 1.12fr 1fr;align-items:stretch;gap:0}
+.plan{border:1.5px solid var(--line);background:#fff;padding:44px 38px;display:flex;flex-direction:column}
+.plan.basic{opacity:.92}
+.plan.best{background:var(--ink);color:var(--cream);border-color:var(--ink);transform:scale(1.04);box-shadow:0 30px 60px rgba(24,20,19,.25);position:relative;z-index:2}
+.plan .tag{position:absolute;top:-16px;left:38px;background:var(--orange);color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:8px 14px}
+.plan h3{font-size:26px}
+.plan .desc{font-size:15px;opacity:.7;margin:8px 0 26px;min-height:40px}
+.plan .price{font-size:68px;font-weight:700;line-height:1}
+.plan .price sup{font-size:28px;vertical-align:top}
+.plan .per{font-size:14px;opacity:.65;margin:8px 0 30px}
+.plan ul{list-style:none;flex:1}
+.plan li{font-size:16px;padding:11px 0;border-bottom:1px solid rgba(128,120,112,.2);display:flex;gap:12px}
+.plan li:before{content:"✓";color:var(--orange);font-weight:700}
+.plan li.no{opacity:.4}
+.plan li.no:before{content:"–";color:inherit}
+.plan .btn{text-align:center;margin-top:32px}
+.plan.basic .btn,.plan.prem .btn{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.guar{margin-top:44px;display:flex;gap:48px;justify-content:center;font-size:15px;color:var(--muted)}
+.guar b{color:var(--ink)}
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px}
+.q{border-top:1.5px solid var(--ink);padding:24px 0;display:flex;justify-content:space-between;font-size:20px;font-weight:700}
+.q:last-child{border-bottom:1.5px solid var(--ink)}
+.q span{color:var(--orange)}
+/* final */
+.final{background:var(--orange);color:#fff;text-align:center;padding:110px 96px}
+.final h2{font-size:60px;line-height:1.05;max-width:980px;margin:0 auto 22px}
+.final p{font-size:20px;opacity:.9;margin-bottom:38px}
+.final .btn{background:var(--ink)}
+.final .scar{margin-top:22px;font-size:14px;opacity:.85}
+footer{background:var(--ink);color:var(--cream);padding:56px 96px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+footer img{height:34px}
+footer .o{opacity:.6}
+.note{position:absolute;right:16px;background:#fff7c2;color:#5a4a00;border:1px dashed #b39b00;font-size:12px;padding:6px 10px;max-width:240px;line-height:1.35}
+.rel{position:relative}
+
+.vs{display:grid;grid-template-columns:1.1fr 1fr 1fr;border:1.5px solid var(--ink);background:#fff}
+.vs>div{padding:20px 28px;border-bottom:1px solid var(--line);font-size:17px;display:flex;align-items:center}
+.vs .h{font-weight:700;font-size:19px;padding:26px 28px}
+.vs .h.us{background:var(--ink);color:var(--cream)}
+.vs .us{background:#fbf8f2;font-weight:700}
+.vs .lbl{color:var(--muted);font-size:15px;letter-spacing:.04em}
+.vs .y:before{content:"✓";color:var(--orange);font-weight:700;margin-right:10px}
+.vs .n:before{content:"✕";color:#9a918a;margin-right:10px}
+.vs .m:before{content:"~";color:#9a918a;margin-right:10px;font-weight:700}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.pc .card{padding:36px;border:1.5px solid var(--line);background:#fff}
+.pc .card.pro{border-color:var(--ink)}
+.pc h3{font-size:24px;margin-bottom:18px}
+.pc li{list-style:none;font-size:16px;line-height:1.5;padding:9px 0;border-bottom:1px solid var(--line)}
+.pc li b{display:block}
+.pc li span{color:var(--muted)}
+.honest{margin-top:28px;background:var(--ink);color:var(--cream);padding:28px 36px;display:flex;justify-content:space-between;align-items:center;font-size:17px}
+.honest b{color:var(--orange)}
+
+html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+a.btn{cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.field select,.field input{width:100%;border:1.5px solid var(--line);padding:16px 18px;font-size:18px;font-family:inherit;background:#fff;color:var(--ink);border-radius:0;appearance:none}
+.field .sel{position:relative}
+.field .sel:after{content:"▾";position:absolute;right:18px;top:50%;transform:translateY(-50%);pointer-events:none}
+button.btn{border:0;font-family:inherit;cursor:pointer}
+.toggle button{padding:12px 26px;font-size:15px;font-weight:700;background:transparent;border:0;font-family:inherit;cursor:pointer;color:var(--ink)}
+.toggle button.on{background:var(--ink);color:var(--cream)}
+details.q{display:block}
+details.q summary{display:flex;justify-content:space-between;cursor:pointer;list-style:none}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary span{color:var(--orange)}
+details.q[open] summary span{transform:rotate(45deg)}
+details.q p{font-weight:400;font-size:17px;line-height:1.55;color:var(--muted);margin-top:14px;max-width:640px}
+.photo.img{background-size:cover;background-position:center}
+.wa-float{position:fixed;right:20px;bottom:20px;background:#25d366;color:#fff;font-weight:700;padding:14px 18px;border-radius:40px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:50;font-size:15px}
+@media (max-width:1100px){
+  nav,.hero,.proof,section,.final,footer{padding-left:32px;padding-right:32px}
+  .hero{grid-template-columns:1fr;gap:48px}
+  .hero h1{font-size:52px}
+  .badge{left:16px}.badge.b2{right:16px}
+  .plans{grid-template-columns:1fr;gap:28px;max-width:520px;margin:0 auto}
+  .plan.best{transform:none}
+  .cgrid,.pc{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr;gap:0}
+}
+@media (max-width:760px){
+  nav{padding:18px 16px}
+  nav .links{display:none}
+  nav img{height:30px}
+  .hero,.proof,section,.final,footer{padding-left:16px;padding-right:16px}
+  .hero{padding-top:56px;padding-bottom:48px}
+  .hero h1{font-size:40px}
+  .hero p.lead{font-size:18px}
+  .hero .ctas{flex-direction:column}
+  .hero .ctas .btn{text-align:center}
+  .hero .photo{height:320px}
+  .proof{grid-template-columns:1fr 1fr;gap:28px 0;padding-top:40px;padding-bottom:48px}
+  .proof b{font-size:32px}
+  .proof div{padding-left:16px}
+  section{padding-top:72px;padding-bottom:72px}
+  .head h2{font-size:34px}
+  .head p{font-size:17px}
+  .calc{grid-template-columns:1fr}
+  .calc .in,.calc .out{padding:28px 20px}
+  .calc .out .big{font-size:52px}
+  .steps{grid-template-columns:1fr}
+  .vs{grid-template-columns:1fr 1fr;font-size:15px}
+  .vs>div{padding:14px 12px;font-size:15px}
+  .vs .lbl{grid-column:1/-1;background:#f3eee5;font-weight:700;color:var(--ink);padding:10px 12px;font-size:13px}
+  .vs .h:first-child{display:none}
+  .vs .h{font-size:16px;padding:16px 12px}
+  .honest{flex-direction:column;gap:18px;align-items:flex-start;padding:24px 20px}
+  .case{grid-template-columns:1fr}
+  .case .photo{min-height:200px}
+  .case .body{padding:24px 20px}
+  .ba{flex-direction:column;align-items:stretch}
+  .plan{padding:36px 24px}
+  .guar{flex-direction:column;gap:12px;text-align:center}
+  .q,details.q summary{font-size:17px}
+  .final{padding-top:72px;padding-bottom:72px}
+  .final h2{font-size:36px}
+  footer{flex-direction:column;gap:14px;text-align:center}
+}
+</style></head><body>
+
+<nav>
+  <a href="#"><img src="img/logo-claro.png" alt="hōm property management"></a>
+  <div class="links"><a href="#como">Cómo funciona</a><a href="#resultados">Resultados</a><a href="#planes">Planes</a><a href="#preguntas">Preguntas</a></div>
+  <a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Análisis gratis</a>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="eyebrow">Property management · El Salvador</div>
+    <h1>Tu propiedad puede facturar hasta 3× más<span class="dot">.</span></h1>
+    <p class="lead">Gestionamos tu casa o apartamento en Airbnb de principio a fin: anuncio, precios, huéspedes, limpieza y mantenimiento. Tú solo recibes el reporte y el depósito.</p>
+    <div class="ctas"><a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Quiero mi análisis gratis →</a><a class="btn ghost" href="#resultados">Ver resultados</a></div>
+    <div class="fine">Respuesta por WhatsApp en menos de 24 horas · Sin permanencia</div>
+  </div>
+  <div class="photo rel">Foto: propiedad gestionada por hōm
+    <div class="badge"><b>4.92 ★</b><span>calificación promedio</span></div>
+    <div class="badge b2"><b>479</b><span>reseñas de huéspedes</span></div>
+  </div>
+</div>
+<div class="proof">
+  <div><b>479</b><span>reseñas verificadas en Airbnb</span></div>
+  <div><b>4.92 ★</b><span>calificación promedio</span></div>
+  <div><b>2–4×</b><span>lo que factura el promedio de San Salvador</span></div>
+  <div><b>0</b><span>meses de permanencia obligatoria</span></div>
+</div>
+
+<section class="rel" id="calculadora">
+  <div class="head">
+    <div class="eyebrow">Calculadora</div>
+    <h2>¿Cuánto estás dejando de ganar<span class="dot">?</span></h2>
+    <p>Compara lo que factura tu propiedad hoy con lo que facturan propiedades similares gestionadas por hōm.</p>
+  </div>
+  <div class="calc">
+    <div class="in">
+      <div class="field"><label for="zona">Zona</label><div class="sel"><select id="zona">
+        <option value="ciudad">San Salvador y alrededores</option>
+        <option value="playa">Playa (La Libertad)</option>
+        <option value="otra">Otra zona</option></select></div></div>
+      <div class="field"><label for="tipo">Tipo de propiedad</label><div class="sel"><select id="tipo">
+        <option value="1">Apartamento · 1 habitación</option>
+        <option value="2" selected>Apartamento · 2 habitaciones</option>
+        <option value="3">Casa o apartamento · 3+ habitaciones</option></select></div></div>
+      <div class="field"><label for="hoy">¿Cuánto factura hoy al mes? (US$)</label><input id="hoy" type="number" min="0" step="50" value="800" inputmode="numeric"></div>
+      <button class="btn" id="calc" type="button">Calcular</button>
+    </div>
+    <div class="out">
+      <div class="row"><span>Facturación actual al año</span><b id="o-hoy">$9,600</b></div>
+      <div class="row"><span>Potencial con hōm al año</span><b id="o-pot">$22,800</b></div>
+      <div class="big" id="o-dif">+$13,200</div>
+      <small id="o-note">al año que hoy no estás recibiendo · estimación, la confirmamos en tu análisis gratis</small>
+      <a class="btn wa" id="calc-wa" style="margin-top:28px;align-self:flex-start" data-msg="Hola, usé la calculadora y quiero mi análisis gratis.">Confirmar con un análisis gratis →</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" id="como">
+  <div class="head">
+    <div class="eyebrow">Cómo funciona</div>
+    <h2>Tres pasos y nos encargamos de todo<span class="dot">.</span></h2>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Análisis gratis</h3><p>Revisamos tu propiedad y tu anuncio, y te decimos cuánto puede facturar. Sin costo y sin compromiso.</p></div>
+    <div class="step"><div class="n">02</div><h3>Puesta a punto</h3><p>Sesión de fotos profesional, anuncio nuevo, precios dinámicos y reglas actualizadas a las políticas de Airbnb.</p></div>
+    <div class="step"><div class="n">03</div><h3>Tú recibes</h3><p>Atendemos huéspedes, limpieza y mantenimiento. Cada mes recibes tu depósito y un reporte de una página.</p></div>
+  </div>
+</section>
+
+
+<section style="padding-top:0">
+  <div class="head">
+    <div class="eyebrow">Renta corta vs. renta tradicional</div>
+    <h2>¿Airbnb o alquiler mensual? Te lo decimos claro<span class="dot">.</span></h2>
+    <p>Las dos opciones tienen ventajas. Esto es lo que cambia para ti como propietario.</p>
+  </div>
+  <div class="vs">
+    <div class="h"></div><div class="h us">Renta corta con hōm</div><div class="h">Renta tradicional</div>
+    <div class="lbl">Ingreso al año (apto. 2 hab., ejemplo)</div><div class="us y">$18,000 – $25,000</div><div class="m">$8,000 – $10,000</div>
+    <div class="lbl">Estabilidad del ingreso</div><div class="us m">Varía por temporada</div><div class="y">Fijo cada mes</div>
+    <div class="lbl">Usar la propiedad cuando quieras</div><div class="us y">Sí, bloqueas fechas</div><div class="n">No, durante el contrato</div>
+    <div class="lbl">Estado de la propiedad</div><div class="us y">Revisada después de cada huésped</div><div class="m">La ves al final del contrato</div>
+    <div class="lbl">Riesgo de impago o inquilino difícil</div><div class="us y">Pago anticipado por Airbnb</div><div class="n">Desalojo lento y costoso</div>
+    <div class="lbl">Ajustar el precio</div><div class="us y">Cada día, según demanda</div><div class="n">Una vez al año</div>
+    <div class="lbl">Desgaste y gastos de servicios</div><div class="us m">Mayor; se cubre con el ingreso</div><div class="y">Menor</div>
+    <div class="lbl">Tu tiempo</div><div class="us y">Cero: lo hacemos todo</div><div class="m">Poco, salvo problemas</div>
+  </div>
+  <div class="pc">
+    <div class="card pro"><h3>Ventajas de la renta corta</h3><ul>
+      <li><b>Hasta 2 a 3 veces más ingreso</b><span>Cobras por noche y ajustas el precio a la demanda.</span></li>
+      <li><b>Flexibilidad total</b><span>Puedes usar tu propiedad en vacaciones o venderla sin esperar a que termine un contrato.</span></li>
+      <li><b>Propiedad siempre cuidada</b><span>Limpieza e inspección después de cada estancia.</span></li>
+      <li><b>Menos riesgo de impago</b><span>El huésped paga antes de llegar.</span></li>
+    </ul></div>
+    <div class="card"><h3>Desventajas, y cómo las manejamos</h3><ul>
+      <li><b>Ingreso variable</b><span>Precios dinámicos y estrategia de estancias largas en temporada baja.</span></li>
+      <li><b>Más desgaste</b><span>Mantenimiento preventivo y reposición incluidos en el plan Completo.</span></li>
+      <li><b>Reglas y permisos</b><span>Mantenemos tu anuncio al día con las políticas de Airbnb y el reglamento de tu condominio.</span></li>
+      <li><b>Pagas servicios y comisión</b><span>Aun así, el ingreso neto suele superar al de la renta tradicional.</span></li>
+    </ul></div>
+  </div>
+  <div class="honest"><span><b>Somos honestos:</b> si tu propiedad rinde más en renta tradicional, te lo diremos en el análisis gratis.</span><a class="btn wa" data-msg="Hola, quiero comparar si me conviene más Airbnb o renta tradicional.">Comparar mi propiedad</a></div>
+</section>
+
+<section class="cases" id="resultados">
+  <div class="head">
+    <div class="eyebrow">Resultados reales</div>
+    <h2>Antes y después de hōm<span class="dot">.</span></h2>
+  </div>
+  <div class="cgrid">
+    <div class="case"><div class="photo">Foto propiedad</div><div class="body">
+      <h4>Apartamento 2 hab.</h4><div class="loc">San Benito, San Salvador</div>
+      <div class="ba"><div><small>Antes</small><b>$750/mes</b></div><div class="after"><small>Con hōm</small><b>$2,100/mes</b></div></div>
+      <p class="quote">"Pasé de contestar mensajes a medianoche a solo revisar el reporte." — Propietario</p>
+    </div></div>
+    <div class="case"><div class="photo">Foto propiedad</div><div class="body">
+      <h4>Casa de playa 4 hab.</h4><div class="loc">El Tunco, La Libertad</div>
+      <div class="ba"><div><small>Antes · al mes</small><b>4 noches</b></div><div class="after"><small>Con hōm · al mes</small><b>17 noches</b></div></div>
+      <p class="quote">"Vivo en Houston y por fin la casa trabaja sola." — Propietaria</p>
+    </div></div>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="head" style="text-align:center;margin:0 auto 32px">
+    <div class="eyebrow">Planes</div>
+    <h2>Solo ganamos si tú ganas<span class="dot">.</span></h2>
+    <p>Cobramos un porcentaje de lo reservado. Sin cuota fija, sin permanencia.</p>
+  </div>
+  <div style="text-align:center"><div class="toggle"><button class="on" data-z="ciudad" type="button">Ciudad</button><button data-z="playa" type="button">Playa</button></div></div>
+  <div class="plans">
+    <div class="plan basic">
+      <h3>Básico</h3><div class="desc">Para quien ya tiene equipo en la propiedad.</div>
+      <div class="price"><span class="pct" data-c="13" data-p="15">13</span><sup>%</sup></div><div class="per">de cada reserva</div>
+      <ul>
+        <li>Anuncio optimizado</li><li>Precios dinámicos</li><li>Mensajes con huéspedes 24/7</li>
+        <li class="no">Check-in y limpieza</li><li class="no">Mantenimiento</li><li class="no">Fotos profesionales</li><li class="no">Reporte mensual</li>
+      </ul>
+      <a class="btn wa" data-msg="Hola, me interesa el plan Básico.">Elegir Básico</a>
+    </div>
+    <div class="plan best">
+      <div class="tag">El más elegido</div>
+      <h3>Completo</h3><div class="desc">Nos encargamos de todo. Tú solo recibes.</div>
+      <div class="price"><span class="pct" data-c="16" data-p="20">16</span><sup>%</sup></div><div class="per">de cada reserva</div>
+      <ul>
+        <li>Todo lo del plan Básico</li><li>Check-in y coordinación de limpieza</li><li>Mantenimiento y reposición de amenidades</li>
+        <li>Sesión de fotos profesional gratis</li><li>Reporte mensual de ingresos</li><li>60 días con comisión reducida</li>
+      </ul>
+      <a class="btn wa" data-msg="Hola, me interesa el plan Completo.">Quiero el plan Completo</a>
+    </div>
+    <div class="plan prem">
+      <h3>Premium</h3><div class="desc">Para propiedades de lujo y portafolios.</div>
+      <div class="price"><span class="pct" data-c="20" data-p="25">20</span><sup>%</sup></div><div class="per">de cada reserva</div>
+      <ul>
+        <li>Todo lo del plan Completo</li><li>Asesoría de diseño y equipamiento</li><li>Revisión trimestral de rentabilidad</li>
+        <li>Atención prioritaria al propietario</li><li>Gestor dedicado</li>
+      </ul>
+      <a class="btn wa" data-msg="Hola, me interesa el plan Premium.">Elegir Premium</a>
+    </div>
+  </div>
+  <div class="guar"><span><b>Sin permanencia:</b> te vas con 30 días de aviso</span><span><b>Sin cuota fija:</b> si no hay reservas, no cobramos</span><span><b>Sin sorpresas:</b> reporte mensual de ingresos y gastos</span></div>
+</section>
+
+<section style="padding-top:0" id="preguntas">
+  <div class="faq">
+    <div class="head"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que nos preguntan los propietarios<span class="dot">.</span></h2></div>
+    <div>
+      <details class="q"><summary>¿Qué cambió con las nuevas reglas de Airbnb? <span>+</span></summary><p>Desde el 20 de noviembre de 2026 Airbnb ya no permite pedir tareas de limpieza al huésped, cobrar multas ni poner reglas fuera del anuncio. Nosotros actualizamos tu anuncio para que cumpla y no pierda visibilidad.</p></details>
+      <details class="q"><summary>¿Puedo seguir usando mi propiedad algunos fines de semana? <span>+</span></summary><p>Sí. Nos avisas con anticipación y bloqueamos esas fechas en el calendario.</p></details>
+      <details class="q"><summary>¿Quién paga la limpieza? <span>+</span></summary><p>La limpieza se cobra al huésped en cada reserva como tarifa de limpieza. Nosotros la coordinamos y revisamos que la propiedad quede lista.</p></details>
+      <details class="q"><summary>¿Cómo y cuándo recibo mi dinero? <span>+</span></summary><p>Cada mes recibes tu pago junto con un reporte de una página con reservas, ingresos y gastos.</p></details>
+      <details class="q"><summary>Vivo fuera del país, ¿cómo funciona? <span>+</span></summary><p>Muchos de nuestros propietarios viven en Estados Unidos. Todo se maneja por WhatsApp y videollamada, y recibes el reporte mensual donde estés.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <h2>Descubre cuánto puede facturar tu propiedad</h2>
+  <p>Análisis gratis por WhatsApp. Sin compromiso y sin permanencia.</p>
+  <a class="btn wa" data-msg="Hola, quiero saber cuánto puede facturar mi propiedad.">Escribir por WhatsApp →</a>
+  <div class="scar">Aceptamos solo 3 propiedades nuevas al mes para cuidar la calidad.</div>
+</div>
+
+<footer><img src="img/logo-claro.png" alt="hōm"><span class="o">San Salvador · La Libertad · El Salvador</span><span class="o"><a class="wa" data-msg="Hola">WhatsApp</a> · © <span id="yr"></span> hōm</span></footer>
+
+<a class="wa-float wa" data-msg="Hola, quiero información sobre la gestión de mi propiedad.">WhatsApp</a>
+
+<script>
+/* === EDITA AQUÍ === */
+const WHATSAPP = "50300000000"; // número con código de país, sin + ni espacios
+// Ingreso anual estimado con hōm por zona y tipo (US$). Ajusta con tus datos reales.
+const POTENCIAL = {
+  ciudad:{1:16000,2:22000,3:30000},
+  playa:{1:15000,2:22000,3:32000},
+  otra:{1:10000,2:14000,3:18000}
+};
+/* ================== */
+const fmt=n=>"$"+Math.round(n).toLocaleString("en-US");
+document.querySelectorAll(".wa").forEach(a=>{
+  a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.msg||"Hola");
+  a.target="_blank";a.rel="noopener";
+});
+function calcular(){
+  const z=document.getElementById("zona").value,t=document.getElementById("tipo").value;
+  const hoy=Math.max(0,+document.getElementById("hoy").value||0)*12;
+  const pot=POTENCIAL[z][t], dif=pot-hoy;
+  document.getElementById("o-hoy").textContent=fmt(hoy);
+  document.getElementById("o-pot").textContent=fmt(pot);
+  const big=document.getElementById("o-dif"),note=document.getElementById("o-note");
+  if(dif>0){big.textContent="+"+fmt(dif);note.textContent="al año que hoy no estás recibiendo · estimación, la confirmamos en tu análisis gratis";}
+  else{big.textContent="¡Vas muy bien!";note.textContent="Tu propiedad ya rinde por encima del promedio. Hablemos de cómo mantenerlo.";}
+  const w=document.getElementById("calc-wa");
+  w.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(`Hola, usé la calculadora: ${document.getElementById("zona").selectedOptions[0].text}, ${document.getElementById("tipo").selectedOptions[0].text}, facturo ${fmt(hoy/12)} al mes. Quiero mi análisis gratis.`);
+}
+["zona","tipo","hoy"].forEach(id=>document.getElementById(id).addEventListener("input",calcular));
+document.getElementById("calc").addEventListener("click",calcular);
+calcular();
+document.querySelectorAll(".toggle button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".toggle button").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll(".pct").forEach(p=>p.textContent=b.dataset.z==="playa"?p.dataset.p:p.dataset.c);
+}));
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body></html>
