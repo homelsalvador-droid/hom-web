@@ -22,7 +22,9 @@ HEAD = [
  ('content="hōm · Tu propiedad puede facturar hasta 3× más"', 'content="hōm · Your property could earn up to 3× more"'),
  ('content="Administración de Airbnb y renta vacacional en El Salvador. 479 reseñas · 4.92 ★. Análisis gratis de tu propiedad."',
   'content="Airbnb and vacation rental management in El Salvador. 479 reviews · 4.92 ★. Free analysis of your property."'),
- ('content="Apartamento gestionado por hōm con vista al volcán de San Salvador"', 'content="Apartment managed by hōm with a view of the San Salvador volcano"'),
+ ('content="Piscina en la azotea con vista a San Salvador: Ponemos tu propiedad a trabajar en Airbnb"', 'content="Rooftop pool overlooking San Salvador: We put your property to work on Airbnb"'),
+ ('<meta property="og:image" content="https://homlatam.com/img/og-image.jpg">', '<meta property="og:image" content="https://homlatam.com/img/og-image-en.jpg">'),
+ ('<meta name="twitter:image" content="https://homlatam.com/img/og-image.jpg">', '<meta name="twitter:image" content="https://homlatam.com/img/og-image-en.jpg">'),
  ('content="hōm · Administración de Airbnb en El Salvador"', 'content="hōm · Airbnb Property Management in El Salvador"'),
  ('content="Tu propiedad puede facturar hasta 3× más. Análisis gratis."', 'content="Your property could earn up to 3× more. Free analysis."'),
 ]
