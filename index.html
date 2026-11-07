@@ -391,6 +391,16 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
 .final .frm{border-radius:18px;padding:36px;box-shadow:0 30px 60px rgba(24,20,19,.25)}
 dialog.ref{border-radius:18px}
 .frm .msg{color:var(--ink);font-weight:700}
+dialog.okpop{border:0;margin:auto;border-radius:20px;padding:44px 40px 36px;max-width:420px;width:calc(100% - 32px);text-align:center;background:var(--cream);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog.okpop::backdrop{background:rgba(24,20,19,.6)}
+dialog.okpop[open]{animation:okin .45s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes okin{from{opacity:0;transform:scale(.85) translateY(20px)}to{opacity:1;transform:none}}
+.okic{width:72px;height:72px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
+.okic path{stroke-dasharray:30;stroke-dashoffset:30;animation:okdraw .5s .3s forwards}
+@keyframes okdraw{to{stroke-dashoffset:0}}
+.okpop h3{font-size:28px;letter-spacing:-.02em;margin-bottom:10px}
+.okpop p{color:var(--muted);font-size:17px;line-height:1.5;margin-bottom:26px}
+.okpop .btn{border:0;cursor:pointer;font-family:inherit;border-radius:10px;padding:15px 40px}
 </style>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css" media="print" onload="this.media='all'"></head><body>
 
@@ -679,6 +689,13 @@ dialog.ref{border-radius:18px}
   </div>
 </dialog>
 
+<dialog class="okpop" id="ok-dialog">
+  <div class="okic" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  <h3>¡Formulario enviado!</h3>
+  <p>Gracias. Recibimos tus datos y te contactaremos pronto.</p>
+  <button class="btn" type="button" onclick="this.closest('dialog').close()">Cerrar</button>
+</dialog>
+
 <section style="padding-top:0" id="preguntas">
   <div class="faq">
     <div class="head"><div class="eyebrow">Preguntas frecuentes</div><h2>Lo que nos preguntan los propietarios<span class="dot">.</span></h2></div>
@@ -733,8 +750,9 @@ document.querySelectorAll(".wa").forEach(a=>{
 });
 
 /* Formularios: las respuestas llegan a este correo (vía FormSubmit) */
-const CORREO_FORMULARIOS = "homelsalvador@gmail.com";
-const refDlg=document.getElementById("ref-dialog");
+const CORREO_FORMULARIOS = "chris@homlatam.com";
+const refDlg=document.getElementById("ref-dialog"),okDlg=document.getElementById("ok-dialog");
+okDlg.addEventListener("click",e=>{if(e.target===okDlg)okDlg.close()});
 document.getElementById("open-ref").addEventListener("click",()=>refDlg.showModal());
 refDlg.addEventListener("click",e=>{if(e.target===refDlg)refDlg.close()});
 document.querySelectorAll("form[data-form]").forEach(f=>{
@@ -749,7 +767,7 @@ document.querySelectorAll("form[data-form]").forEach(f=>{
       const r=await fetch("https://formsubmit.co/ajax/"+CORREO_FORMULARIOS,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});
       const j=await r.json().catch(()=>({}));
       if(!r.ok||j.success==="false"||j.success===false)throw 0;
-      f.reset();msg.textContent="¡Listo! Recibimos tus datos y te contactamos pronto.";
+      f.reset();msg.textContent="";if(refDlg.open)refDlg.close();okDlg.showModal();
     }catch(_){
       msg.innerHTML='No se pudo enviar. Escríbenos por <a href="https://wa.me/'+WHATSAPP+'" target="_blank" rel="noopener" style="text-decoration:underline">WhatsApp</a>.';
     }

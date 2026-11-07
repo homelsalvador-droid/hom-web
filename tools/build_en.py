@@ -249,7 +249,9 @@ PARES = [
  ('<a class="wa" data-msg="Hola">WhatsApp</a>', '<a class="wa" data-msg="Hi">WhatsApp</a>'),
  # scripts
  ('btn.textContent="Enviando...";', 'btn.textContent="Sending...";'),
- ('"¡Listo! Recibimos tus datos y te contactamos pronto."', '"Done! We received your details and will contact you soon."'),
+ ('<h3>¡Formulario enviado!</h3>', '<h3>Form sent!</h3>'),
+ ('<p>Gracias. Recibimos tus datos y te contactaremos pronto.</p>', '<p>Thank you. We received your details and will contact you soon.</p>'),
+ ('onclick="this.closest(\'dialog\').close()">Cerrar</button>', 'onclick="this.closest(\'dialog\').close()">Close</button>'),
  ("'No se pudo enviar. Escríbenos por <a", "'Could not send. Message us on <a"),
  ('data-msg="Hola, quiero comparar si me conviene más Airbnb o renta tradicional."', 'data-msg="Hi, I would like to compare whether Airbnb or a long-term lease is better for me."'),
 ]
