@@ -35,7 +35,7 @@ h1,h2{font-weight:700;letter-spacing:-.02em}
 .dot{color:var(--orange)}
 /* nav */
 nav{background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:26px 96px;border-bottom:1px solid #2c2624}
-nav img{height:38px}
+nav img{height:38px;width:auto}
 nav .links{display:flex;gap:40px;font-size:15px;opacity:.85}
 nav .btn{padding:12px 20px;font-size:14px}
 /* hero */
@@ -83,7 +83,7 @@ section{padding:110px 96px}
 .case{background:#fff;display:grid;grid-template-columns:200px minmax(0,1fr)}
 .case .photo{height:auto;min-height:260px}
 .case .body{padding:32px}
-.case h4{font-size:22px;margin-bottom:6px}
+.case h3{font-size:22px;margin-bottom:6px}
 .case .loc{color:var(--muted);font-size:14px;margin-bottom:22px}
 .ba{display:flex;gap:16px;align-items:center}
 .ba div{flex:1;border:1px solid var(--line);padding:14px}
@@ -127,7 +127,7 @@ section{padding:110px 96px}
 .final .btn{background:var(--ink)}
 .final .scar{margin-top:22px;font-size:14px;opacity:.85}
 footer{background:var(--ink);color:var(--cream);padding:56px 96px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
-footer img{height:34px}
+footer img{height:34px;width:auto}
 footer .o{opacity:.6}
 .note{position:absolute;right:16px;background:#fff7c2;color:#5a4a00;border:1px dashed #b39b00;font-size:12px;padding:6px 10px;max-width:240px;line-height:1.35}
 .rel{position:relative}
@@ -344,10 +344,10 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
 .testi figcaption b{color:var(--ink)}
 @media (max-width:760px){.testi{grid-template-columns:1fr;padding:24px;gap:16px}.testi img,.testi .av{width:72px;height:72px}.testi .av{font-size:24px}.testi blockquote{font-size:17px}}
 </style>
-<link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css" media="print" onload="this.media='all'"></head><body>
 
 <nav>
-  <a href="#"><img src="img/logo-claro.png" alt="hōm property management"></a>
+  <a href="#"><img src="img/logo-claro-sm.png" alt="hōm property management" width="140" height="38"></a>
   <div class="links"><a href="#como">Cómo funciona</a><a href="#propiedades">Propiedades</a><a href="#nosotros">Nosotros</a><a href="#planes">Planes</a><a href="#realtors">Realtors</a></div>
   <a class="btn wa" data-msg="Hola, quiero mi análisis gratis de ingresos para mi propiedad.">Análisis gratis</a>
 </nav>
@@ -495,12 +495,12 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
   </div>
   <div class="cgrid">
     <div class="case"><div class="photo img" style="background-image:url(img/caso-1.jpg)" role="img" aria-label="Apartamento de 2 habitaciones en Vistas de Masferrer, San Salvador"></div><div class="body">
-      <h4>Apartamento 2 hab. · Masferrer 705</h4><div class="loc">San Salvador</div>
+      <h3>Apartamento 2 hab. · Masferrer 705</h3><div class="loc">San Salvador</div>
       <div class="ba"><div><small>Tradicional</small><b>$9,000/año</b></div><div class="after"><small>Con hōm, año 1</small><b>$29,036/año</b></div></div>
       <p class="quote"><b style="font-style:normal;color:var(--orange)">3.2× más ingreso.</b> En 2022 se alquilaba en $750 al mes; en su primer año en renta corta facturó $29,036.</p>
     </div></div>
     <div class="case"><div class="photo img" style="background-image:url(img/caso-2.jpg)" role="img" aria-label="Apartamento de 3 habitaciones en Panorama Tower, San Salvador"></div><div class="body">
-      <h4>Apartamento 3 hab. · Panorama 306</h4><div class="loc">San Salvador</div>
+      <h3>Apartamento 3 hab. · Panorama 306</h3><div class="loc">San Salvador</div>
       <div class="ba"><div><small>Tradicional*</small><b>$14,400/año</b></div><div class="after"><small>Con hōm, año 1</small><b>$28,200/año</b></div></div>
       <p class="quote"><b style="font-style:normal;color:var(--orange)">Casi 2× más ingreso.</b> Nació como Airbnb. *Estimado de mercado: $1,200 al mes en alquiler tradicional.</p>
     </div></div>
@@ -691,7 +691,7 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
 </div>
 </div>
 
-<footer><img src="img/logo-claro.png" alt="hōm"><span class="o">San Salvador · La Libertad · El Salvador</span><span class="social"><a href="https://www.instagram.com/hom.latam" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/hom.sv" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a href="https://www.tiktok.com/@homlatam" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 3c.3 2.2 1.7 3.8 4 4v3.2c-1.5 0-2.9-.5-4-1.2V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.3A2.8 2.8 0 1 0 13 15V3h3z"/></svg></a></span><span class="o"><a class="wa" data-msg="Hola">WhatsApp</a> · © <span id="yr"></span> hōm</span></footer>
+<footer><img src="img/logo-claro-sm.png" alt="hōm" width="125" height="34" loading="lazy"><span class="o">San Salvador · La Libertad · El Salvador</span><span class="social"><a href="https://www.instagram.com/hom.latam" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/hom.sv" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a href="https://www.tiktok.com/@homlatam" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 3c.3 2.2 1.7 3.8 4 4v3.2c-1.5 0-2.9-.5-4-1.2V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.3A2.8 2.8 0 1 0 13 15V3h3z"/></svg></a></span><span class="o"><a class="wa" data-msg="Hola">WhatsApp</a> · © <span id="yr"></span> hōm</span></footer>
 
 <a class="wa-float wa" data-msg="Hola, quiero información sobre la gestión de mi propiedad.">WhatsApp</a>
 
@@ -770,7 +770,6 @@ document.querySelectorAll(".toggle button").forEach(b=>b.addEventListener("click
 document.getElementById("yr").textContent=new Date().getFullYear();
 </script>
 
-<script src="vendor/leaflet/leaflet.js"></script>
 <script>
 // Ubicaciones aproximadas (lat, lng). Ajusta si hace falta.
 const SITIOS=[
@@ -781,19 +780,24 @@ const SITIOS=[
   ["Avitat Joy","Antiguo Cuscatlán",13.6765,-89.2478],
   ["Las Veraneras","Acajutla, Sonsonate",13.5300,-89.8030]
 ];
-try{
+function initMap(){try{
   const map=L.map("map",{scrollWheelZoom:false});
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",{maxZoom:16,attribution:"Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap"}).addTo(map);
   L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",{maxZoom:16}).addTo(map);
   const icon=L.divIcon({className:"",html:'<div class="hpin"></div>',iconSize:[16,16],iconAnchor:[8,8]});
-  const marks=SITIOS.map(([n,z,la,ln])=>L.marker([la,ln],{icon}).addTo(map).bindPopup("<b>"+n+"</b><br>"+z));
+  const marks=SITIOS.map(([n,z,la,ln])=>L.marker([la,ln],{icon,title:n,alt:n}).addTo(map).bindPopup("<b>"+n+"</b><br>"+z));
   // Etiquetas por zona
-  [["San Salvador",13.6990,-89.2440],["Acajutla",13.5300,-89.8030]].forEach(([t,la,ln])=>L.marker([la,ln],{icon:L.divIcon({className:"zlabel",html:"<span>"+t+"</span>",iconSize:null})}).addTo(map));
+  [["San Salvador",13.6990,-89.2440],["Acajutla",13.5300,-89.8030]].forEach(([t,la,ln])=>L.marker([la,ln],{interactive:false,keyboard:false,icon:L.divIcon({className:"zlabel",html:"<span>"+t+"</span>",iconSize:null})}).addTo(map));
   map.fitBounds(L.latLngBounds(SITIOS.map(x=>[x[2],x[3]])),{padding:[40,40]});
   document.querySelectorAll(".map-list li").forEach(li=>li.addEventListener("click",()=>{
     const i=+li.dataset.i;document.querySelectorAll(".map-list li").forEach(x=>x.classList.toggle("on",x===li));
     map.setView([SITIOS[i][2],SITIOS[i][3]],15);marks[i].openPopup();
   }));
-}catch(e){document.getElementById("map").style.display="none";}
+}catch(e){document.getElementById("map").style.display="none";}}
+/* El mapa se carga solo cuando el visitante se acerca a esa sección (página más rápida) */
+(()=>{const el=document.getElementById("map");let done=false;
+const load=()=>{if(done)return;done=true;const sc=document.createElement("script");sc.src="vendor/leaflet/leaflet.js";sc.onload=initMap;document.body.appendChild(sc)};
+if(!("IntersectionObserver" in window))return load();
+const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();load()}},{rootMargin:"600px"});io.observe(el);})();
 </script>
 </body></html>
