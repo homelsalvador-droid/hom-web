@@ -751,6 +751,8 @@ document.querySelectorAll(".wa").forEach(a=>{
 
 /* Formularios: las respuestas llegan a este correo (vía FormSubmit) */
 const CORREO_FORMULARIOS = "chris@homlatam.com";
+// Clave de Web3Forms (web3forms.com). Si está vacía se usa FormSubmit.
+const WEB3FORMS_KEY = "";
 const refDlg=document.getElementById("ref-dialog"),okDlg=document.getElementById("ok-dialog");
 okDlg.addEventListener("click",e=>{if(e.target===okDlg)okDlg.close()});
 document.getElementById("open-ref").addEventListener("click",()=>refDlg.showModal());
@@ -760,17 +762,24 @@ document.querySelectorAll("form[data-form]").forEach(f=>{
     e.preventDefault();
     const btn=f.querySelector("button[type=submit]"),msg=f.querySelector(".msg"),txt=btn.textContent;
     const data=Object.fromEntries(new FormData(f));
-    if(data._honey)return;
-    data._subject="hōm web: "+f.dataset.form;data._template="table";data._captcha="false";
+    if(data._honey)return;delete data._honey;
     btn.disabled=true;btn.textContent="Enviando...";msg.textContent="";
+    const ctl=new AbortController(),tm=setTimeout(()=>ctl.abort(),12000);
     try{
-      const r=await fetch("https://formsubmit.co/ajax/"+CORREO_FORMULARIOS,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)});
+      let r;
+      if(WEB3FORMS_KEY){
+        r=await fetch("https://api.web3forms.com/submit",{method:"POST",signal:ctl.signal,headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({access_key:WEB3FORMS_KEY,subject:"hōm web: "+f.dataset.form,from_name:"Web hōm",...data})});
+      }else{
+        r=await fetch("https://formsubmit.co/ajax/"+CORREO_FORMULARIOS,{method:"POST",signal:ctl.signal,headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({...data,_subject:"hōm web: "+f.dataset.form,_template:"table",_captcha:"false"})});
+      }
       const j=await r.json().catch(()=>({}));
       if(!r.ok||j.success==="false"||j.success===false)throw 0;
       f.reset();msg.textContent="";if(refDlg.open)refDlg.close();okDlg.showModal();
     }catch(_){
-      msg.innerHTML='No se pudo enviar. Escríbenos por <a href="https://wa.me/'+WHATSAPP+'" target="_blank" rel="noopener" style="text-decoration:underline">WhatsApp</a>.';
+      const resumen=Object.entries(data).filter(([k,v])=>v).map(([k,v])=>k+": "+v).join("\n");
+      msg.innerHTML='No se pudo enviar el formulario. <a href="https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent("Hola, quiero información.\n"+resumen)+'" target="_blank" rel="noopener" style="text-decoration:underline">Envíanos tus datos por WhatsApp</a>.';
     }
+    clearTimeout(tm);
     btn.disabled=false;btn.textContent=txt;
   });
 });

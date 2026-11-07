@@ -252,7 +252,9 @@ PARES = [
  ('<h3>¡Formulario enviado!</h3>', '<h3>Form sent!</h3>'),
  ('<p>Gracias. Recibimos tus datos y te contactaremos pronto.</p>', '<p>Thank you. We received your details and will contact you soon.</p>'),
  ('onclick="this.closest(\'dialog\').close()">Cerrar</button>', 'onclick="this.closest(\'dialog\').close()">Close</button>'),
- ("'No se pudo enviar. Escríbenos por <a", "'Could not send. Message us on <a"),
+ ("'No se pudo enviar el formulario. <a", "'The form could not be sent. <a"),
+ ('" target="_blank" rel="noopener" style="text-decoration:underline">Envíanos tus datos por WhatsApp</a>.\'', '" target="_blank" rel="noopener" style="text-decoration:underline">Send us your details on WhatsApp</a>.\''),
+ ('encodeURIComponent("Hola, quiero información.\\n"', 'encodeURIComponent("Hi, I would like information.\\n"'),
  ('data-msg="Hola, quiero comparar si me conviene más Airbnb o renta tradicional."', 'data-msg="Hi, I would like to compare whether Airbnb or a long-term lease is better for me."'),
 ]
 
