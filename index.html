@@ -336,11 +336,13 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
 .proof.in div:nth-child(2){transition-delay:.12s}.proof.in div:nth-child(3){transition-delay:.24s}.proof.in div:nth-child(4){transition-delay:.36s}
 @media (prefers-reduced-motion:reduce){.hero *,.hero .kb::before,.hero .hl::after,.proof div{animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}}
 .testi{margin:48px 0 0;background:#fff;padding:36px;display:grid;grid-template-columns:96px 1fr;gap:28px;align-items:start;border-left:4px solid var(--orange)}
+.testi .av{width:96px;height:96px;border-radius:50%;background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:700;letter-spacing:.02em}
+.testi+.testi{margin-top:20px}
 .testi img{width:96px;height:96px;border-radius:50%;object-fit:cover}
 .testi blockquote{font-size:20px;line-height:1.55;color:var(--ink)}
 .testi figcaption{margin-top:16px;font-size:15px;color:var(--muted)}
 .testi figcaption b{color:var(--ink)}
-@media (max-width:760px){.testi{grid-template-columns:1fr;padding:24px;gap:16px}.testi img{width:72px;height:72px}.testi blockquote{font-size:17px}}
+@media (max-width:760px){.testi{grid-template-columns:1fr;padding:24px;gap:16px}.testi img,.testi .av{width:72px;height:72px}.testi .av{font-size:24px}.testi blockquote{font-size:17px}}
 </style>
 <link rel="stylesheet" href="vendor/leaflet/leaflet.css"></head><body>
 
@@ -503,6 +505,13 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
       <p class="quote"><b style="font-style:normal;color:var(--orange)">Casi 2× más ingreso.</b> Nació como Airbnb. *Estimado de mercado: $1,200 al mes en alquiler tradicional.</p>
     </div></div>
   </div>
+  <figure class="testi">
+    <div class="av" aria-hidden="true">AA</div>
+    <div>
+      <blockquote>“En noviembre de 2024 le entregué a hōm mi propiedad, amueblada con piezas de alta gama. Mi mayor preocupación era el cuidado, y la verdad es que tanto los muebles como la casa se han mantenido en perfecto estado gracias al mantenimiento constante. Los resultados han superado lo que esperaba: este año la propiedad va encaminada a generar alrededor de $30,000. Y lo mejor es la flexibilidad, porque cuando vengo a El Salvador bloqueamos las fechas y la disfruto como mi casa.”</blockquote>
+      <figcaption><b>Alejandro Acuña</b> · Propietario · Administración en Airbnb desde 2024</figcaption>
+    </div>
+  </figure>
 </section>
 
 <section class="about" id="nosotros">
@@ -591,6 +600,13 @@ dialog.ref .x{position:absolute;top:12px;right:16px;background:none;border:0;fon
     <div>
       <blockquote>“Hace más de dos años firmé con hōm un contrato de tres años por mi apartamento. Ellos se encargaron de amueblarlo y ponerlo a punto para trabajarlo, sin que yo tuviera que invertir ni coordinar nada. Desde entonces todos los pagos han llegado puntuales, y nunca me han pedido ayuda con nada. Para mí es un ingreso fijo, seguro y totalmente estable. Me olvido del apartamento y sé que está bien cuidado.”</blockquote>
       <figcaption><b>Héctor Pleites</b> · Propietario en renta fija desde hace más de 2 años</figcaption>
+    </div>
+  </figure>
+  <figure class="testi">
+    <div class="av" aria-hidden="true">JC</div>
+    <div>
+      <blockquote>“Empecé con hōm alquilándoles mi apartamento en Avitat Joy con un contrato de dos años. Fue una experiencia tan buena que, al terminar, no quise volver a la renta tradicional. Decidimos que hōm se quedara administrando la propiedad en Airbnb. Ya llevamos casi un año así. Conozco las dos modalidades y en ambas he tenido la misma tranquilidad y el mismo cuidado de mi propiedad.”</blockquote>
+      <figcaption><b>Jorge Cáceres</b> · Propietario en Avitat Joy · Primero renta fija, hoy administración</figcaption>
     </div>
   </figure>
   <p class="r2r-note">Esta modalidad depende del potencial de cada propiedad: zona, vista, tamaño y amenidades del edificio. Lo evaluamos en el análisis gratis.</p>
