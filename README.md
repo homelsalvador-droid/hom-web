@@ -12,3 +12,10 @@ También hay que cambiar:
 - Los rangos de ingreso de la tabla "Renta corta vs. renta tradicional".
 - Las fotos: guárdalas en `img/` y cambia los bloques `class="photo"` por `class="photo img" style="background-image:url(img/tu-foto.jpg)"`.
 - La frase "Aceptamos solo 3 propiedades nuevas al mes" si no aplica.
+
+## Versión en inglés
+`en/index.html` se genera desde `index.html`. Después de cambiar la página en español, corre:
+
+    python3 tools/build_en.py
+
+Si cambiaste un texto, agrega su traducción en `tools/build_en.py` (lista `PARES`). El script avisa qué textos no encontró.

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://homlatam.com/</loc><lastmod>2026-11-06</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://homlatam.com/</loc><lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homlatam.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/"/>
+  </url>
+  <url><loc>https://homlatam.com/en/</loc><lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homlatam.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/"/>
+  </url>
 </urlset>
