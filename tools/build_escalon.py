@@ -110,7 +110,7 @@ html = f"""<!doctype html>
       <tr><td>Escalón Alta</td><td>152</td><td>$81</td><td>60%</td><td>$16,648</td></tr>
       <tr><td>Escalón Media</td><td>255</td><td>$75</td><td>60%</td><td>$15,445</td></tr>
       <tr><td>Escalón Baja</td><td>122</td><td>$51</td><td>59%</td><td>$10,406</td></tr>
-      <tr class="us"><td>Apartamentos hōm en la zona</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>$28,200–29,036</td></tr>
+      <tr class="us"><td>Panorama 306, gestionado por hōm</td><td>4.9 ★</td><td>$105</td><td>72%</td><td>$27,000</td></tr>
     </tbody>
   </table></div>
   <div class="zcmp" role="img" aria-label="Comparación de facturación anual: promedio de Escalón Alta, la sub-zona más alta, $16,648; Panorama 306 con hōm $28,200; Masferrer 705 con hōm $29,036">
@@ -118,7 +118,7 @@ html = f"""<!doctype html>
     <div class="zbar"><span>Panorama 306 con hōm</span><i class="o" style="width:97%"><em>$28,200</em></i></div>
     <div class="zbar"><span>Masferrer 705 con hōm</span><i class="o" style="width:100%"><em>$29,036</em></i></div>
   </div>
-  <p class="zsrc">Fuente del promedio: AirDNA, sub-mercados Escalón Alta, Media y Baja, últimos 12 meses a noviembre de 2026. Los resultados de hōm corresponden al primer año de cada propiedad.</p>
+  <p class="zsrc">Fuente del promedio: AirDNA, sub-mercados Escalón Alta, Media y Baja, últimos 12 meses a noviembre de 2026. La fila de Panorama 306 usa la misma medición de AirDNA; las barras muestran la facturación del primer año de cada propiedad según nuestros reportes.</p>
 </section>
 
 <section class="cases" id="resultados">
