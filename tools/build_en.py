@@ -106,7 +106,7 @@ PARES = [
  ('Ya operamos en los mejores edificios de San Salvador y la costa', 'We already operate in the best buildings in San Salvador and on the coast'),
  ('Si tu propiedad está en uno de estos edificios o cerca, ya tenemos equipo en la zona.', 'If your property is in one of these buildings or nearby, we already have a team in the area.'),
  ('aria-label="Mapa de propiedades gestionadas por hōm"', 'aria-label="Map of properties managed by hōm"'),
- ('<p class="map-note">Ubicaciones aproximadas.</p>', '<p class="map-note">Approximate locations.</p>'),
+ ('<p class="map-note">Ubicaciones aproximadas. · <a href="/escalon/" style="text-decoration:underline">¿Tienes propiedad en la Escalón? Mira los datos de la zona →</a></p>', '<p class="map-note">Approximate locations. · <a href="/escalon/" hreflang="es" style="text-decoration:underline">Own property in Colonia Escalón? See the area data (in Spanish) →</a></p>'),
  # resultados
  ('<div class="eyebrow">Resultados reales</div>', '<div class="eyebrow">Real results</div>'),
  ('Antes y después de hōm', 'Before and after hōm'),
