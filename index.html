@@ -25,6 +25,15 @@
 <link rel="icon" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preload" as="image" href="img/hero.jpg">
+<!-- Medición: Google Analytics (y Meta Pixel cuando haya ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DML5EG7HHZ"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag("js",new Date());gtag("config","G-DML5EG7HHZ");
+const META_PIXEL_ID="";
+if(META_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init",META_PIXEL_ID);fbq("track","PageView");}
+function medir(evento,datos){try{gtag("event",evento,datos||{});if(window.fbq)fbq("track",evento==="generate_lead"?"Lead":"Contact",datos||{});}catch(e){}}
+</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "LocalBusiness", "@id": "https://homlatam.com/#negocio", "name": "hōm Property Management", "alternateName": "hōm", "description": "Administración de propiedades en Airbnb y renta vacacional en San Salvador y la costa de El Salvador.", "url": "https://homlatam.com/", "logo": "https://homlatam.com/img/logo-oscuro.png", "image": "https://homlatam.com/img/og-image.jpg", "telephone": "+50379281377", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "San Salvador", "addressCountry": "SV"}, "areaServed": [{"@type": "City", "name": "San Salvador"}, {"@type": "City", "name": "Antiguo Cuscatlán"}, {"@type": "AdministrativeArea", "name": "La Libertad"}, {"@type": "City", "name": "Acajutla"}, {"@type": "Country", "name": "El Salvador"}], "sameAs": ["https://www.instagram.com/hom.latam", "https://www.facebook.com/hom.sv", "https://www.tiktok.com/@homlatam", "https://www.airbnb.com/p/leones"], "knowsAbout": ["Administración de Airbnb", "Renta vacacional", "Property management", "Rent to rent"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué tengo que hacer yo como propietario?", "acceptedAnswer": {"@type": "Answer", "text": "Nada. Nosotros manejamos la gestión completa. Durante el mes pagamos los gastos del día a día de tu propiedad (insumos, reparaciones menores y lo que haga falta para operar). A fin de mes te enviamos el reporte con la conciliación de esos gastos y te hacemos un solo cobro. Ese es el único contacto que necesitas tener con nosotros."}}, {"@type": "Question", "name": "¿Puedo seguir usando mi propiedad algunos fines de semana?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Nos avisas con anticipación y bloqueamos esas fechas en el calendario."}}, {"@type": "Question", "name": "¿Quién paga la limpieza?", "acceptedAnswer": {"@type": "Answer", "text": "La limpieza se cobra al huésped en cada reserva como tarifa de limpieza. Nosotros la coordinamos y revisamos que la propiedad quede lista."}}, {"@type": "Question", "name": "¿Cómo y cuándo recibo mi dinero?", "acceptedAnswer": {"@type": "Answer", "text": "Airbnb te deposita directamente en tu cuenta bancaria. Por transparencia, nosotros nunca recibimos ni manejamos tu dinero. Para ahorrar en costos de transferencia, te recomendamos configurar en tu cuenta un monto mínimo para recibir los pagos, en lugar de una transferencia por cada reserva."}}, {"@type": "Question", "name": "Vivo fuera del país, ¿cómo funciona?", "acceptedAnswer": {"@type": "Answer", "text": "Muchos de nuestros propietarios viven en Estados Unidos. Todo se maneja por WhatsApp y videollamada, y recibes el reporte mensual donde estés."}}]}]}</script>
 <style>
 :root{--ink:#181413;--cream:#f8f4ec;--orange:#ec5028;--muted:#6f6863;--line:#e4ddd0}
@@ -747,6 +756,7 @@ const fmt=n=>"$"+Math.round(n).toLocaleString("en-US");
 document.querySelectorAll(".wa").forEach(a=>{
   a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.msg||"Hola");
   a.target="_blank";a.rel="noopener";
+  a.addEventListener("click",()=>medir("whatsapp_click",{link_text:(a.textContent||"").trim().slice(0,60)}));
 });
 
 /* Formularios: las respuestas llegan a este correo (vía FormSubmit) */
@@ -774,7 +784,7 @@ document.querySelectorAll("form[data-form]").forEach(f=>{
       }
       const j=await r.json().catch(()=>({}));
       if(!r.ok||j.success==="false"||j.success===false)throw 0;
-      f.reset();msg.textContent="";if(refDlg.open)refDlg.close();okDlg.showModal();
+      medir("generate_lead",{form_name:f.dataset.form});f.reset();msg.textContent="";if(refDlg.open)refDlg.close();okDlg.showModal();
     }catch(_){
       const resumen=Object.entries(data).filter(([k,v])=>v).map(([k,v])=>k+": "+v).join("\n");
       msg.innerHTML='No se pudo enviar el formulario. <a href="https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent("Hola, quiero información.\n"+resumen)+'" target="_blank" rel="noopener" style="text-decoration:underline">Envíanos tus datos por WhatsApp</a>.';
