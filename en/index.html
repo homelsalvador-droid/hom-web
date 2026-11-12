@@ -411,6 +411,34 @@ dialog.okpop[open]{animation:okin .45s cubic-bezier(.2,.9,.3,1.2)}
 .okpop h3{font-size:28px;letter-spacing:-.02em;margin-bottom:10px}
 .okpop p{color:var(--muted);font-size:17px;line-height:1.5;margin-bottom:26px}
 .okpop .btn{border:0;cursor:pointer;font-family:inherit;border-radius:10px;padding:15px 40px}
+/* bloque contra el mercado */
+.mk{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;margin-bottom:110px}
+.mk h2{font-size:52px;line-height:1.05;margin:20px 0 22px}
+.mk-lead{font-size:19px;line-height:1.55;color:#3d3633;max-width:560px}
+.mk-lead+.mk-lead{margin-top:16px}
+.mk-lead b{color:var(--ink)}
+.mk-revs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px;max-width:600px}
+.mk-revs figure{background:var(--cream);border-left:3px solid var(--orange);padding:18px 20px;margin:0}
+.mk-revs blockquote{font-size:15px;line-height:1.5}
+.mk-revs figcaption{font-size:12.5px;color:var(--muted);margin-top:10px;font-weight:700}
+.mk-note{font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:26px;max-width:560px}
+.mk-card{background:var(--ink);color:var(--cream);border-radius:4px;overflow:hidden}
+.mk-photo{aspect-ratio:16/9;background:url(../img/masferrer-705-sala.jpg) center 60%/cover}
+.mk-in{padding:36px 44px 40px}
+.mk-rank{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid #3a3230;padding-bottom:26px;margin-bottom:8px}
+.mk-rank b{font-size:88px;color:var(--orange);line-height:.9;letter-spacing:-.04em}
+.mk-rank span{font-size:17px;line-height:1.35;opacity:.9}
+.mk-hdr,.mk-row{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:12px}
+.mk-hdr{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;padding-top:18px}
+.mk-hdr span:not(:first-child){text-align:right}
+.mk-row{padding:20px 0;border-bottom:1px solid #3a3230;align-items:baseline}
+.mk-row:last-child{border-bottom:0}
+.mk-row .k{font-size:15px;opacity:.75}
+.mk-row .m{font-size:15px;opacity:.6;text-align:right}
+.mk-row .h{font-size:28px;font-weight:700;text-align:right}
+.mk-row .h small{display:block;font-size:13px;color:var(--orange);margin-top:4px}
+@media (max-width:1100px){.mk{grid-template-columns:1fr;gap:48px}}
+@media (max-width:760px){.mk{gap:36px;margin-bottom:72px}.mk h2{font-size:34px}.mk-revs{grid-template-columns:1fr}.mk-in{padding:26px 22px 30px}.mk-rank b{font-size:64px}.mk-row .h{font-size:22px}}
 </style>
 <link rel="stylesheet" href="../vendor/leaflet/leaflet.css" media="print" onload="this.media='all'"></head><body>
 <noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=4369760116620796&amp;ev=PageView&amp;noscript=1"></noscript>
@@ -538,6 +566,24 @@ dialog.okpop[open]{animation:okin .45s cubic-bezier(.2,.9,.3,1.2)}
 </section>
 
 <section class="cases" id="resultados">
+  <div class="mk" id="mercado">
+    <div>
+      <div class="eyebrow">Our apartment in Masferrer</div>
+      <h2>40% more revenue than the area average<span class="dot">.</span></h2>
+      <p class="mk-lead">There are 112 active two-bedroom apartments on Airbnb in Masferrer Norte. The one we run there is <b>#2 in revenue</b> across the whole area. It charges <b>31% more per night</b> than average and still <b>books more nights</b>.</p>
+      <p class="mk-lead">It isn’t luck: it’s daily dynamic pricing, a listing that sells and guests who leave great reviews.</p>
+      <div class="mk-revs"><figure><blockquote>“Beautiful, clean and modern place with an amazing view. We loved it so much that we ended up extending our stay for 8 extra days.”</blockquote><figcaption>Johanna · Airbnb guest, July 2026</figcaption></figure><figure><blockquote>“Love this place. The view was amazing!! Super close to everything. Definitely recommended!! We will be back soon.”</blockquote><figcaption>Mirna · Airbnb guest, July 2026</figcaption></figure></div>
+      <p class="mk-note">*Source: AirDNA, Masferrer Norte submarket (San Salvador), two-bedroom apartments, last 12 months. Retrieved November 2026. This is the same apartment as the Masferrer 705 case, which earned $29,036 in its first year; over the last 12 months occupancy across the whole area fell 4% and it is still #2. This is one property’s result; every property is different and we don’t guarantee future income.</p>
+    </div>
+    <div class="mk-card">
+      <div class="mk-photo" role="img" aria-label="Living room of the two-bedroom Masferrer 705 apartment, overlooking San Salvador"></div>
+      <div class="mk-in">
+        <div class="mk-rank"><b>#2</b><span>of 112 listings in Masferrer Norte<br>by revenue*</span></div>
+        <div class="mk-hdr"><span></span><span>Area average</span><span>With hōm</span></div>
+        <div class="mk-row"><span class="k">Revenue, last 12 months</span><span class="m">$16,424</span><span class="h">$23K<small>+40%</small></span></div><div class="mk-row"><span class="k">Nightly rate</span><span class="m">$76</span><span class="h">$100<small>+31%</small></span></div><div class="mk-row"><span class="k">Occupancy</span><span class="m">62%</span><span class="h">68%<small>+6 points</small></span></div>
+      </div>
+    </div>
+  </div>
   <div class="head">
     <div class="eyebrow">Real results</div>
     <h2>Before and after hōm<span class="dot">.</span></h2>
