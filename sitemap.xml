@@ -9,4 +9,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/"/>
   </url>
   <url><loc>https://homlatam.com/escalon/</loc><lastmod>2026-11-09</lastmod></url>
+  <url><loc>https://homlatam.com/blog/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homlatam.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/blog/"/>
+  </url>
+  <url><loc>https://homlatam.com/en/blog/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homlatam.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/blog/"/>
+  </url>
+  <url><loc>https://homlatam.com/blog/miedo-a-invertir-en-bienes-raices-el-salvador/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homlatam.com/blog/miedo-a-invertir-en-bienes-raices-el-salvador/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/blog/fear-of-investing-in-real-estate-el-salvador/"/>
+  </url>
+  <url><loc>https://homlatam.com/en/blog/fear-of-investing-in-real-estate-el-salvador/</loc><lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://homlatam.com/blog/miedo-a-invertir-en-bienes-raices-el-salvador/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homlatam.com/en/blog/fear-of-investing-in-real-estate-el-salvador/"/>
+  </url>
 </urlset>
